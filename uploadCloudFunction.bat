@@ -1,0 +1,1 @@
+"D:\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-0gn7op1be7f4656e --n quickstartFunctions --r --project "D:\微信小程序开发项目\party_history_WeiXin" --report
