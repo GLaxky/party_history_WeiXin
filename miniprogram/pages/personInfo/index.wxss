@@ -1,0 +1,35 @@
+/* miniprogram/pages/personInfo/index.wxss */
+
+.person-info-title {
+  margin: 20rpx auto 0 auto;
+  text-align: center;
+  background-color: #66ccff;
+  width: 100px;
+}
+
+.person-info-content {
+  margin: 20rpx auto 0 auto;
+  text-align: center;
+  background-color: #66ccff;
+}
+
+.person-info-story {
+  margin: 20rpx auto 0 auto;
+  text-align: center;
+  background-color: #66ccff;
+}
+
+.person-info-img {
+  margin: 20rpx auto 0 auto;
+  width: 300rpx;
+  height: 400rpx;
+  padding-right: 30%;
+  padding-left: 30%;
+  text-align: center;
+}
+
+.comment {
+  margin: 20rpx auto 0 auto;
+  text-align: center;
+  background-color: #66ccff;
+}
