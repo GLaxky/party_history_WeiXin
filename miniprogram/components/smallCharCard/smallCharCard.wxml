@@ -1,0 +1,14 @@
+<!--components/smallCharCard/smallCharCard.wxml-->
+<navigator url="/pages/map/map?end_char_id={{char_id}}&end_place_id={{p_id}}" bindtap="">
+  <view class="card">
+    <van-image 
+    round
+    width="5rem"
+    height="5rem"
+    fit="contain"
+    src="{{imageUrl}}"
+    />
+    <text class="name"   style="position: relative; left: 0rpx; top: 25rpx">{{name}}</text>
+  </view>
+  
+</navigator>

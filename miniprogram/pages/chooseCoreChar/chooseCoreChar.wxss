@@ -1,0 +1,8 @@
+/* miniprogram/pages/chooseCoreChar/chooseCoreChar.wxss */
+.list{
+  position:fixed;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  
+}

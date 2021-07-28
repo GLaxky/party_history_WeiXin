@@ -6,18 +6,18 @@ Page({
   data: {
     showUploadTip: false,
     powerList: [{
-      title: '云函数',
-      tip: '安全、免鉴权运行业务代码',
+      title: '探索',
+      tip: 'tip',
       showItem: false,
       item: [{
-        title: '获取OpenId',
-        page: 'getOpenId'
+        title: '开始新的探索',
+        page: 'chooseCoreChar'
       },
       //  {
       //   title: '微信支付'
       // },
        {
-        title: '生成小程序码',
+        title: '继续上一次探索',
         page: 'getMiniProgramCode'
       },
       // {
@@ -25,36 +25,36 @@ Page({
       // }
     ]
     }, {
-      title: '数据库',
-      tip: '安全稳定的文档型数据库',
+      title: '成就',
+      tip: 'tip',
       showItem: false,
       item: [{
-        title: '创建集合',
+        title: '党史人物探索成就',
         page: 'createCollection'
       }, {
-        title: '更新记录',
+        title: '党史地点探索成就',
         page: 'updateRecord'
       }, {
-        title: '查询记录',
+        title: '待定',
         page: 'selectRecord'
       }, {
-        title: '聚合操作',
+        title: '待定',
         page: 'sumRecord'
       }]
     }, {
-      title: '云存储',
+      title: '待定',
       tip: '自带CDN加速文件存储',
       showItem: false,
       item: [{
-        title: '上传文件',
+        title: '待定',
         page: 'uploadFile'
       }]
     }, {
-      title: '云托管',
+      title: '待定',
       tip: '不限语言的全托管容器服务',
       showItem: false,
       item: [{
-        title: '部署服务',
+        title: '待定',
         page: 'deployService'
       }]
     }],
@@ -137,6 +137,17 @@ Page({
         showUploadTip: true
       })
       wx.hideLoading()
+    })
+  },
+
+  jumpToMap(){
+    wx.navigateTo({
+      url:'/pages/map/map'
+    })
+  },
+  jumpToCoreChar(){
+    wx.navigateTo({
+      url:'/pages/chooseCoreChar/chooseCoreChar'
     })
   }
 })

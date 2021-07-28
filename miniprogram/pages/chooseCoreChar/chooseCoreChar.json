@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "smallCharCard":"../../components/smallCharCard/smallCharCard"
+  },
+  "navigationBarTitleText": "核心人物"
+}

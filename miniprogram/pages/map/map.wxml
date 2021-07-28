@@ -1,0 +1,16 @@
+<!--miniprogram/pages/map/map.wxml-->
+<view style="width:100%;height:1000rps;text-align:center">
+<map style="width:100%;height:100vh"
+      longitude="{{coreLongitude}}"
+      latitude="{{coreLatitude}}"
+      scale="6"
+      markers="{{markers}}"
+      polyline=""
+      include-points="{{markers}}"></map>
+</view>
+
+<view class="bt">
+  <van-button round  icon="home-o" class="button">回到主页</van-button>
+  <van-button round  icon="completed" class="button">成就 </van-button>
+  <van-button round  icon="flag-o" class="button">继续探索 </van-button>
+  </view>
