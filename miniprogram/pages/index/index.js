@@ -149,5 +149,11 @@ Page({
     wx.navigateTo({
       url:'/pages/chooseCoreChar/chooseCoreChar'
     })
+  },
+  jumpToPlaceAchievement(){
+    wx.navigateTo({
+      url:'/pages/placeAchievement/placeAchievement?type=0'
+    })
+
   }
 })

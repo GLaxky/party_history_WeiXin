@@ -12,5 +12,11 @@
 <view class="bt">
   <van-button round  icon="home-o" class="button">回到主页</van-button>
   <van-button round  icon="completed" class="button">成就 </van-button>
-  <van-button round  icon="flag-o" class="button">继续探索 </van-button>
-  </view>
+  <van-button round  icon="flag-o" class="button" bindtap="showPopup">继续探索 </van-button>
+</view>
+
+<van-popup show="{{ show }}" bind:close="onClose">
+      <view>
+      
+      </view>
+</van-popup>

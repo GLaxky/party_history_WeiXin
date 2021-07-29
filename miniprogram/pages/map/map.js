@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    show: false,
     coreLongitude:0,
     corLatitude:0,
     markers:[],
@@ -201,7 +202,14 @@ Page({
       })
     
     },
-
+    
+    showPopup() {
+      this.setData({ show: true });
+    },
+  
+    onClose() {
+      this.setData({ show: false });
+    },
     
   }
 )

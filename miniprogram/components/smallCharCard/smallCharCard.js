@@ -39,7 +39,7 @@ Component({
   },
 
   ready: function() {
-    console.log("onReady")
+    // console.log("onReady")
     const db = wx.cloud.database();
     db.collection("place")
     .where({
