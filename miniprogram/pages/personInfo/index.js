@@ -7,7 +7,8 @@ Page({
   data: {
     envId: '',
     char_id: '',
-    record: ''
+    record: '',
+    comment: ''
   },
 
   /**
@@ -31,6 +32,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    //查询人物信息
     wx.showLoading({
       title: '',
     })
@@ -48,7 +50,6 @@ Page({
       this.setData({
         record: resp.result.data.data[0]
       })
-     wx.hideLoading()
    }).catch((e) => {
       console.log(e)
       this.setData({
@@ -56,6 +57,29 @@ Page({
       })
      wx.hideLoading()
    })
+   //获得评论数据
+   wx.cloud.callFunction({
+    name: 'quickstartFunctions',
+    config: {
+      env: this.data.envId
+    },
+    data: {
+      type: 'getCommentById',
+      data: this.data.char_id
+    }
+  }).then((resp) => {
+    console.log(resp.result);
+    this.setData({
+      comment: resp.result.data.data
+    })
+   wx.hideLoading()
+ }).catch((e) => {
+    console.log(e)
+    this.setData({
+      showUploadTip: true
+    })
+   wx.hideLoading()
+ })
   },
 
   /**

@@ -13,5 +13,8 @@
     <view>{{record.masterpieces}}</view>
   </view>
   <view class="person-info-content">{{record.story}}</view>
-  <view class='comment'>评论</view>
+  <view class='comment'  wx:for="{{comment}}" wx:key="_id">
+      <view class="comment_detail_uid">{{item.uid}}</view>
+      <view class="comment_detail_comment">{{item.comment}}</view>
+  </view>
 </view>

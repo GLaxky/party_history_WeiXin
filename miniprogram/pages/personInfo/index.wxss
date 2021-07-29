@@ -8,7 +8,8 @@
 }
 
 .person-info-content {
-  margin: 20rpx auto 0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
   text-align: center;
   background-color: #66ccff;
 }
@@ -29,7 +30,16 @@
 }
 
 .comment {
-  margin: 20rpx auto 0 auto;
   text-align: center;
   background-color: #66ccff;
+}
+
+.comment_detail_uid {
+  text-align: left;
+  font-weight: bold;
+}
+
+.comment_detail_content {
+  text-align: center;
+  font-weight: normal;
 }

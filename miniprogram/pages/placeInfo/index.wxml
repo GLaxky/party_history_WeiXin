@@ -1,7 +1,7 @@
 <!--miniprogram/pages/placeInfo/index.wxml-->
 <text>miniprogram/pages/placeInfo/index.wxml</text>
 <view class="placeInfo">
-  <view class="place-info-title">地区名</view>
+  <view class="place-info-title">{{reccord.place_name}}</view>
   <image class="place-info-img" src="{{record.image_url}}"></image>
   <view class='place-info-basic'>
     <view>{{reccord.place_name}}</view>
