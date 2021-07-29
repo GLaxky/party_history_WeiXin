@@ -46,7 +46,6 @@ Page({
         data: this.data.char_id
       }
     }).then((resp) => {
-      console.log(resp.result);
       this.setData({
         record: resp.result.data.data[0]
       })
@@ -68,7 +67,6 @@ Page({
       data: this.data.char_id
     }
   }).then((resp) => {
-    console.log(resp.result);
     this.setData({
       comment: resp.result.data.data
     })
@@ -115,5 +113,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  jumpToPersonPlace: function () {
+    wx.navigateTo({
+      url: '/pages/personPlaces/index?char_id='+(this.data.char_id)
+    })
   }
 })

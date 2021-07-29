@@ -4,6 +4,7 @@
 <view class="personInfo">
   <view class="person-info-title">人物信息</view>
   <image class="person-info-img" src="{{record.image_url}}"></image>
+  <button class="button" bindtap="jumpToPersonPlace">进入人物相关地点</button>
   <view class="person-info-content">
     <view>人物基本介绍</view>
     <view>{{record.cname}}</view>

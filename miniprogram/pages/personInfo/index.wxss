@@ -43,3 +43,9 @@
   text-align: center;
   font-weight: normal;
 }
+
+.button {
+  background-color: greenyellow;
+  width: 300rpx;
+  font-size: x-small;
+}
