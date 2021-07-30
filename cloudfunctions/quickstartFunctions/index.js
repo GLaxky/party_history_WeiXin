@@ -7,6 +7,9 @@ const sumRecord = require('./sumRecord/index')
 const getPersonInfo = require('./getPersonInfo/index')
 const getPersonById = require('./getPersonById/index')
 const getPlaceById = require('./getPlaceById/index')
+const getCommentById = require('./getCommentById/index')
+const getPlacesByPerson = require('./getPlacesByPerson/index')
+const getAchieveByUid = require('./getAchieveByUid/index')
 
 
 // 云函数入口函数
@@ -25,10 +28,16 @@ exports.main = async (event, context) => {
     case 'sumRecord':
       return await sumRecord.main(event, context)
     case 'getPersonInfo':
-        return await getPersonInfo.main(event, context)
+      return await getPersonInfo.main(event, context)
     case 'getPersonById':
       return await getPersonById.main(event, context)
     case 'getPlaceById':
-        return await getPlaceById.main(event, context)
+      return await getPlaceById.main(event, context)
+    case 'getCommentById':
+      return await getCommentById.main(event, context)
+    case 'getPlacesByPerson':
+      return await getPlacesByPerson.main(event, context)
+    case 'getAchieveByUid':
+      return await getAchieveByUid.main(event, context)
   }
 }

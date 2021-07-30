@@ -1,0 +1,2 @@
+<!--components/placeButton/placeButton.wxml-->
+<button class="jump_to_place_info_button" bindtap="jumpToPlaceInfo">{{place_name}}</button>

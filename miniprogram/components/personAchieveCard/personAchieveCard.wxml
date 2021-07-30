@@ -1,0 +1,8 @@
+<!--components/personAchieveCard/personAchieveCard.wxml-->
+<navigator url="/pages/personInfo/index?char_id={{char_id}}" bindtap="">
+  <view class="card">
+    <image class="image" src="{{imageUrl}}"/>
+    <text class="name"   style="position: relative; left: 0rpx">{{name}}</text>
+  </view>
+  
+</navigator>

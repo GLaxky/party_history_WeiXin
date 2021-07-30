@@ -1,1 +1,29 @@
+<<<<<<< HEAD
 /* pages/personAchievement/index.wxss */
+=======
+/* miniprogram/pages/personAchievement/index.wxss */
+
+.code_box {
+  text-align: center;
+  background-color: white;
+  margin-top: 30rpx;
+  padding: 17rpx;
+}
+
+.code_box_title {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  text-align: left;
+}
+
+.code_box_record {
+  display: flex;
+}
+
+.line {
+  height: 1rpx;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+>>>>>>> a918f1c782f8f3c915ded0b7e2bfa9e31c214c2b
