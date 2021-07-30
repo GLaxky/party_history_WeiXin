@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "personAchieveCard":"../../components/personAchieveCard/personAchieveCard"
+  }
+}

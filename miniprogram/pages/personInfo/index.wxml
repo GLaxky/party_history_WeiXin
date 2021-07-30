@@ -1,7 +1,9 @@
 <!--miniprogram/pages/personInfo/index.wxml-->
 <text>miniprogram/pages/personInfo/index.wxml</text>
 
-<view class="personInfo">
+<view wx:if="{{!char_id}}">请探索该人物后再试</view>
+
+<view wx:if="{{char_id}}" class="personInfo">
   <view class="person-info-title">人物信息</view>
   <image class="person-info-img" src="{{record.image_url}}"></image>
   <button class="button" bindtap="jumpToPersonPlace">进入人物相关地点</button>
