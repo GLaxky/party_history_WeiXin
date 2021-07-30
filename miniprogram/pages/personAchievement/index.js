@@ -10,6 +10,7 @@ Page({
     record: '',
     openId: '',
     achieveList: []
+
   },
 
   /**
@@ -19,13 +20,14 @@ Page({
     this.setData({
       envId: options.envId
     })
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**

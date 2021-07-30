@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    show: false,
     coreLongitude:0,
     corLatitude:0,
     markers:[],
@@ -13,27 +14,30 @@ Page({
     start_place_id:0,
     end_char_id:0,
     end_place_id:0,
+    next_items_list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
+    console.log(getApp().globalData)
+    this.getNextItemIist(options.end_place_id,options.end_char_id);
     if(options.start_char_id==null){
       //如果起始点为null
       let tmp=[];
       
       let tmpCharInfo=await this.getCharInfo(options.end_char_id);
-      console.log(tmpCharInfo)
+      //console.log(tmpCharInfo)
       let tmpPlaceInfo=await this.getPlaceInfo(options.end_place_id);
-      console.log(tmpPlaceInfo)
+      //console.log(tmpPlaceInfo)
       tmp.push({
         id: 1,
         latitude: parseFloat(tmpPlaceInfo.latitude),
         longitude: parseFloat(tmpPlaceInfo.longitude),
         width: 35,
         height: 45,
-        label: {
+        callout: {
           content: tmpCharInfo.cname+tmpPlaceInfo.place_name,
           color: '#ff0000',
           fontSize: 14,
@@ -48,6 +52,14 @@ Page({
           anchorY:0
         }
       });
+      tmp.push({
+        id: 3,
+        latitude: parseFloat(tmpPlaceInfo.latitude),
+        longitude: parseFloat(tmpPlaceInfo.longitude),
+        width: 35,
+        height: 45,
+        iconPath:"../../images/image-20210730152715120.png"
+      });
       this.setData({
         start_char_id:0,
         start_place_id:0,
@@ -59,8 +71,8 @@ Page({
       })
     }else{
       let tmp=[];
-      let tmpStartCharInfo=await this.getCharInfo(options.Start_char_id);
-      let tmpStartPlaceInfo=await this.getPlaceInfo(options.Start_place_id);
+      let tmpStartCharInfo=await this.getCharInfo(options.start_char_id);
+      let tmpStartPlaceInfo=await this.getPlaceInfo(options.start_place_id);
       let tmpEndCharInfo=await this.getCharInfo(options.end_char_id);
       let tmpEndPlaceInfo=await this.getPlaceInfo(options.end_place_id);
       tmp.push({
@@ -69,7 +81,7 @@ Page({
         longitude: parseFloat(tmpStartPlaceInfo.longitude),
         width: 35,
         height: 45,
-        label: {
+        callout: {
           content: tmpStartCharInfo.cname+"\n"+tmpStartPlaceInfo.place_name,
           color: '#ff0000',
           fontSize: 14,
@@ -90,7 +102,7 @@ Page({
         longitude: parseFloat(tmpEndPlaceInfo.longitude),
         width: 35,
         height: 45,
-        label: {
+        callout: {
           content: tmpEndCharInfo.cname+"\n"+tmpEndPlaceInfo.place_name,
           color: '#ff0000',
           fontSize: 14,
@@ -104,6 +116,14 @@ Page({
           anchorX:0,
           anchorY:0
         }
+      });
+      tmp.push({
+        id: 3,
+        latitude: parseFloat(tmpStartPlaceInfo.latitude),
+        longitude: parseFloat(tmpStartPlaceInfo.longitude),
+        width: 35,
+        height: 45,
+        iconPath:"../../images/image-20210730152715120.png"
       });
       this.setData({
         start_char_id:options.start_char_id,
@@ -166,7 +186,9 @@ Page({
   },
 
   goBackToHome(){
-    
+    wx.navigateTo({
+      url:'/pages/index/index'
+    })
   },
 
   getCharInfo:async function(cid){
@@ -177,7 +199,7 @@ Page({
           char_id: cid
         },
         success: res => {
-          console.log("getCharInfo"+res.result)
+          // console.log("getCharInfo"+res.result)
           resolve(res.result)
         }
       })
@@ -194,14 +216,73 @@ Page({
           place_id: pid
         },
         success: res => {
-          console.log("getPlaceInfo"+res.result)
+          // console.log("getPlaceInfo"+res.result)
           resolve(res.result)
         }
         })
       })
     
     },
-
+    getNextItemIist:async function(pid,cid){
+      const that=this;
+      return new Promise(function(resolve, reject){
+        wx.cloud.callFunction({
+          name: 'getNextCharIds',
+          data: {
+            place_id: pid,
+            char_id:cid
+          },
+          success: res => {
+            // console.log("getNextItemIist"+res.result.list)
+            that.setData({
+              next_items_list:res.result.list
+            })
+            resolve(res.result)
+          }
+          })
+        })
+      
+      },
     
+    showPopup() {
+      this.setData({ show: true });
+    },
+  
+    onClose() {
+      this.setData({ show: false });
+    },
+    goToChooseCoreChar(){
+      wx.navigateTo({
+        url:'/pages/chooseCoreChar/chooseCoreChar'
+      })
+    },
+    goTocharInfo(e){
+      console.log(e)
+
+    },
+
+    showAssociation:async function(){
+      let tmpEndPlaceInfo=await this.getPlaceInfo(this.data.end_place_id);
+      var mapCtx = wx.createMapContext('map');
+      mapCtx.translateMarker({
+        markerId: 3,
+        destination: {
+            latitude: tmpEndPlaceInfo.latitude,
+            longitude:  tmpEndPlaceInfo.longitude,
+        },
+        autoRotate:true,
+        moveWithRotate: true,
+        duration:3000,
+        animationEnd() {
+          console.log('animation end')
+        },
+        success:function () {
+          mapCtx.moveToLocation({
+            latitude: tmpEndPlaceInfo.latitude,
+            longitude:  tmpEndPlaceInfo.longitude,
+          });
+        }
+      })
+    }
   }
 )

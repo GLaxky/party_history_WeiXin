@@ -1,0 +1,21 @@
+<!--miniprogram/pages/placeAchievement/placeAchievement.wxml-->
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onChange"/>
+</van-dropdown-menu>
+<!-- <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+  <van-sidebar-item title="标签名 1" />
+  <van-sidebar-item title="标签名 2" />
+  <van-sidebar-item title="标签名 3" />
+</van-sidebar>
+
+<van-notify id="van-notify" /> -->
+
+<view style="">
+<map style="width:100%;height:100vh"
+      longitude="{{coreLongitude}}"
+      latitude="{{coreLatitude}}"
+      scale="6"
+      markers="{{markers}}"
+      polyline=""
+      include-points="{{markers}}"></map>
+</view>

@@ -1,3 +1,4 @@
+
 /* miniprogram/pages/personAchievement/index.wxss */
 
 .code_box {
@@ -23,3 +24,4 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
 }
+

@@ -92,3 +92,12 @@ page {
   font-size: 24rpx;
   margin-top: 25%;
 }
+
+.container{
+  padding: 15rpx;
+  background-color: white;
+	border-radius: 37.5rpx;
+  box-shadow: 5rpx 5rpx 5rpx 5rpx gray;
+  justify-content: space-around;
+  margin: 30rpx;
+}
