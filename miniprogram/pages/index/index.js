@@ -29,7 +29,7 @@ Page({
       showItem: false,
       item: [{
         title: '党史人物探索成就',
-        page: 'createCollection'
+        page: 'personAchievement'
       }, {
         title: '党史地点探索成就',
         page: 'placeAchievement'
