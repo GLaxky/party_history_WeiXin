@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-/* pages/personAchievement/index.wxss */
-=======
+
 /* miniprogram/pages/personAchievement/index.wxss */
 
 .code_box {
@@ -26,4 +24,4 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
 }
->>>>>>> a918f1c782f8f3c915ded0b7e2bfa9e31c214c2b
+

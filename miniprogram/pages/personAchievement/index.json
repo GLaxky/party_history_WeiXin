@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "usingComponents": {}
-=======
   "usingComponents": {
     "personAchieveCard":"../../components/personAchieveCard/personAchieveCard"
   }
->>>>>>> a918f1c782f8f3c915ded0b7e2bfa9e31c214c2b
 }

@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-<!--pages/personAchievement/index.wxml-->
-<text>pages/personAchievement/index.wxml</text>
-=======
+
 <!--miniprogram/pages/personAchievement/index.wxml-->
 <text>miniprogram/pages/personAchievement/index.wxml</text>
 
@@ -11,4 +8,3 @@
       <personAchieveCard name="{{item.cname}}" char_id="{{item.char_id}}" imageUrl="{{item.image_url}}"></personAchieveCard>
     </view>
   </view>
->>>>>>> a918f1c782f8f3c915ded0b7e2bfa9e31c214c2b
