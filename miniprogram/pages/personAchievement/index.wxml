@@ -1,7 +1,5 @@
 
 <!--miniprogram/pages/personAchievement/index.wxml-->
-<text>miniprogram/pages/personAchievement/index.wxml</text>
-
 <view class="box_text" wx:if="{{!record}}">数据将展示在这里</view>
 <view  wx:if="{{record}}" class="code_box">
     <view class="code_box_record" wx:for="{{record}}" wx:key="_id">
