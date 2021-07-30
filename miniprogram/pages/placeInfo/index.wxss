@@ -1,0 +1,36 @@
+/* miniprogram/pages/placeInfo/index.wxss */
+
+
+.place-info-title {
+  margin: 20rpx auto 0 auto;
+  text-align: center;
+  background-color: #66ccff;
+  width: 100px;
+}
+
+.place-info-basic {
+  margin: 20rpx auto 0 auto;
+  text-align: center;
+  background-color: #66ccff;
+}
+
+.place-info-intro {
+  margin: 20rpx auto 0 auto;
+  text-align: center;
+  background-color: #66ccff;
+}
+
+.place-info-story {
+  margin: 20rpx auto 0 auto;
+  text-align: center;
+  background-color: #66ccff;
+}
+
+.place-info-img {
+  margin: 20rpx auto 0 auto;
+  width: 300rpx;
+  height: 200rpx;
+  padding-right: 30%;
+  padding-left: 30%;
+  text-align: center;
+}

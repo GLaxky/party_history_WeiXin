@@ -1,1 +1,1 @@
-"D:\Î¢ÐÅweb¿ª·¢Õß¹¤¾ß\cli.bat" cloud functions deploy --e cloud1-0gn7op1be7f4656e --n quickstartFunctions --r --project "D:\Î¢ÐÅÐ¡³ÌÐò¿ª·¢ÏîÄ¿\party_history_WeiXin" --report
+"D:\Î¢ï¿½ï¿½webï¿½ï¿½ï¿½ï¿½ï¿½ß¹ï¿½ï¿½ï¿½\cli.bat" cloud functions deploy --e cloud1-0gn7op1be7f4656e --n quickstartFunctions --r --project "D:\Î¢ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ò¿ª·ï¿½ï¿½ï¿½Ä¿\party_history_WeiXin" --report

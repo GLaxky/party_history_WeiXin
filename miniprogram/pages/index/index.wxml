@@ -25,9 +25,23 @@
     </view>
   </view>
 
-<button bindtap="jumpToMap">进入map</button>
-<button bindtap="jumpToCoreChar">进入CoreChar</button>
-<button bindtap="jumpToPlaceAchievement">进入地点成就</button>
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 微信登陆 </button>
+    </block>
+    <block wx:else>
+      <van-image 
+      bindtap="bindViewTap" 
+      class="userinfo-avatar" 
+      src="{{userInfo.avatarUrl}}" 
+      width="5rem"
+      height="5rem"
+      fit="contain"></van-image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
   <view class="environment" bindtap="onChangeShowEnvChoose">当前环境 {{ selectedEnv.alias }}</view>
 
   <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>

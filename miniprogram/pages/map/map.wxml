@@ -1,22 +1,39 @@
 <!--miniprogram/pages/map/map.wxml-->
 <view style="width:100%;height:1000rps;text-align:center">
 <map style="width:100%;height:100vh"
+      id="map"
       longitude="{{coreLongitude}}"
       latitude="{{coreLatitude}}"
       scale="6"
       markers="{{markers}}"
       polyline=""
-      include-points="{{markers}}"></map>
+      include-points="{{markers}}"
+      bindcallouttap="goTocharInfo"></map>
 </view>
 
 <view class="bt">
-  <van-button round  icon="home-o" class="button">回到主页</van-button>
-  <van-button round  icon="completed" class="button">成就 </van-button>
+  <van-button round  icon="home-o" class="button" bindtap="goBackToHome">回到主页</van-button>
+  <van-button round  icon="completed" class="button" bindtap="showAssociation">记录手账</van-button>
   <van-button round  icon="flag-o" class="button" bindtap="showPopup">继续探索 </van-button>
 </view>
 
-<van-popup show="{{ show }}" bind:close="onClose">
-      <view>
-      
+<van-popup show="{{ show }}" bind:close="onClose" custom-style="height: 40%" position="top">
+
+      <view wx:if="{{next_items_list.length > 0}}"> 
+            <view>选择你想要探索的下一个人物</view>
+            <view class="next_items_list" wx:for="{{next_items_list}}" wx:for-index="idx" wx:for-item="item">
+                  <nextCharItem 
+                  start_char_id="{{end_char_id}}"
+                  start_place_id="{{end_place_id}}"
+                  end_char_id="{{item.end_char_id}}"
+                  end_place_id="{{item.end_place_id}}"
+                  relation="{{item.relation}}"
+                  ></nextCharItem>
+            </view>
       </view>
+      <view wx:else> 
+            <view>该路径探索完成，请选择新的核心人物吧</view>
+            <van-button icon="star-o" bindtap="goToChooseCoreChar">回到核心人物选择界面</van-button>
+      </view>
+      
 </van-popup>

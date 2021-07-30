@@ -4,6 +4,11 @@ const { envList } = require('../../envList.js')
 
 Page({
   data: {
+    haveGetOpenId:false,
+    userInfo: {},
+    hasUserInfo: false,
+    canIUseGetUserProfile: false,
+
     showUploadTip: false,
     powerList: [{
       title: '探索',
@@ -13,19 +18,13 @@ Page({
         title: '开始新的探索',
         page: 'chooseCoreChar'
       },
-      //  {
-      //   title: '微信支付'
-      // },
        {
         title: '继续上一次探索',
         page: 'getMiniProgramCode'
       },
-      // {
-      //   title: '发送订阅消息',
-      // }
     ]
     }, {
-      title: '成就',
+      title: '探索成就',
       tip: 'tip',
       showItem: false,
       item: [{
@@ -33,7 +32,7 @@ Page({
         page: 'createCollection'
       }, {
         title: '党史地点探索成就',
-        page: 'updateRecord'
+        page: 'placeAchievement'
       }, {
         title: '待定',
         page: 'selectRecord'
@@ -43,7 +42,7 @@ Page({
       }]
     }, {
       title: '待定',
-      tip: '自带CDN加速文件存储',
+      tip: '待定',
       showItem: false,
       item: [{
         title: '待定',
@@ -51,7 +50,7 @@ Page({
       }]
     }, {
       title: '待定',
-      tip: '不限语言的全托管容器服务',
+      tip: '待定',
       showItem: false,
       item: [{
         title: '待定',
@@ -61,6 +60,75 @@ Page({
     envList,
     selectedEnv: envList[0],
     haveCreateCollection: false
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad:async function (options) {
+    if (wx.getUserProfile) {
+      this.setData({
+        canIUseGetUserProfile: true,
+      })
+    }
+    this.getOpenId()
+    wx.getUserProfile({
+      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+        app.globalData.user_name= res.userInfo.nickName;
+        
+      }
+    })
+  },
+
+  getUserProfile(e) {
+    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
+    // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+    wx.getUserProfile({
+      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+        app.globalData.user_name= res.userInfo.nickName;
+        
+      }
+    })
+  },
+
+  getOpenId:async function() {
+    wx.showLoading({
+      title: '',
+    })
+   wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'getOpenId'
+      }
+    }).then((resp) => {
+      this.setData({
+        haveGetOpenId: true,
+        openId: resp.result.openid
+      })
+      
+      app.globalData.user_openId=resp.result.openid,
+      
+      console.log(resp.result.openid)
+     wx.hideLoading()
+   }).catch((e) => {
+      this.setData({
+        showUploadTip: true
+      })
+     wx.hideLoading()
+    })
   },
 
   onClickPowerInfo(e) {
@@ -139,21 +207,6 @@ Page({
       wx.hideLoading()
     })
   },
-
-  jumpToMap(){
-    wx.navigateTo({
-      url:'/pages/map/map'
-    })
-  },
-  jumpToCoreChar(){
-    wx.navigateTo({
-      url:'/pages/chooseCoreChar/chooseCoreChar'
-    })
-  },
-  jumpToPlaceAchievement(){
-    wx.navigateTo({
-      url:'/pages/placeAchievement/placeAchievement?type=0'
-    })
-
-  }
+  
+  
 })

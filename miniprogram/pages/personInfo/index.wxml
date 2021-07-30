@@ -1,0 +1,20 @@
+<!--miniprogram/pages/personInfo/index.wxml-->
+<text>miniprogram/pages/personInfo/index.wxml</text>
+
+<view class="personInfo">
+  <view class="person-info-title">人物信息</view>
+  <image class="person-info-img" src="{{record.image_url}}"></image>
+  <view class="person-info-content">
+    <view>人物基本介绍</view>
+    <view>{{record.cname}}</view>
+    <view>性别</view>
+    <view>{{record.intro}}</view>
+    <view>{{record.birth}}<text>-</text>{{record.death}}</view>
+    <view>{{record.masterpieces}}</view>
+  </view>
+  <view class="person-info-content">{{record.story}}</view>
+  <view class='comment'  wx:for="{{comment}}" wx:key="_id">
+      <view class="comment_detail_uid">{{item.uid}}</view>
+      <view class="comment_detail_comment">{{item.comment}}</view>
+  </view>
+</view>

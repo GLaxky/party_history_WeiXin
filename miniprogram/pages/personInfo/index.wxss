@@ -1,0 +1,45 @@
+/* miniprogram/pages/personInfo/index.wxss */
+
+.person-info-title {
+  margin: 20rpx auto 0 auto;
+  text-align: center;
+  background-color: #66ccff;
+  width: 100px;
+}
+
+.person-info-content {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  background-color: #66ccff;
+}
+
+.person-info-story {
+  margin: 20rpx auto 0 auto;
+  text-align: center;
+  background-color: #66ccff;
+}
+
+.person-info-img {
+  margin: 20rpx auto 0 auto;
+  width: 300rpx;
+  height: 400rpx;
+  padding-right: 30%;
+  padding-left: 30%;
+  text-align: center;
+}
+
+.comment {
+  text-align: center;
+  background-color: #66ccff;
+}
+
+.comment_detail_uid {
+  text-align: left;
+  font-weight: bold;
+}
+
+.comment_detail_content {
+  text-align: center;
+  font-weight: normal;
+}

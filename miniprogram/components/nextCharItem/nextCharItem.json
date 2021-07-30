@@ -1,6 +1,6 @@
 {
+  "component": true,
   "usingComponents": {
-    "cloud-tip-modal": "/components/cloudTipModal/index",
     "van-image": "@vant/weapp/image/index"
   }
 }

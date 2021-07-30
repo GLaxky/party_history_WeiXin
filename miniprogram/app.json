@@ -13,8 +13,11 @@
     "pages/sumRecord/index",
     "pages/sumRecordResult/index",
     "pages/map/map",
-    "pages/chooseCoreChar/chooseCoreChar",
-    "pages/placeAchievement/placeAchievement"
+    "pages/chooseCoreChar/index",
+    "pages/placeAchievement/index",
+    "pages/placeInfo/index",
+    "pages/personInfo/index",
+    "pages/personAchievement/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
