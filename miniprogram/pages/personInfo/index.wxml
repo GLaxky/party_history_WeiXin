@@ -14,6 +14,10 @@
     <view>{{record.masterpieces}}</view>
   </view>
   <view class="person-info-content">{{record.story}}</view>
+  <view class="submit-comment">
+    <input bindinput="input_comment" class="input-comment" type="text" value="{{input_comment}}" placeholder="请输入你的评论"></input>
+    <button class="submit-btn" bindtap="submit">提交评论</button>
+  </view>
   <view class='comment'  wx:for="{{comment}}" wx:key="_id">
       <view class="comment_detail_uid">{{item.uid}}</view>
       <view class="comment_detail_comment">{{item.comment}}</view>

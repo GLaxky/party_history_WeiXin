@@ -10,6 +10,7 @@ const getPlaceById = require('./getPlaceById/index')
 const getCommentById = require('./getCommentById/index')
 const getPlacesByPerson = require('./getPlacesByPerson/index')
 const getAchieveByUid = require('./getAchieveByUid/index')
+const insertComment = require('./insertComment/index')
 
 
 // 云函数入口函数
@@ -39,5 +40,7 @@ exports.main = async (event, context) => {
       return await getPlacesByPerson.main(event, context)
     case 'getAchieveByUid':
       return await getAchieveByUid.main(event, context)
+    case 'insertComment':
+      return await insertComment.main(event, context)
   }
 }

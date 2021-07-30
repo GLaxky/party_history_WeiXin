@@ -29,6 +29,31 @@
   text-align: center;
 }
 
+.submit-comment {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+}
+
+.input-comment {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  width: 70%;
+  height: 50rpx;
+  background-color: #66ccff;
+}
+
+.submit-btn {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  width: 25%;
+  height: 50rpx;
+  font-size: x-small;
+  text-align: center;
+  line-height: 50rpx;
+  background-color: greenyellow;
+}
+
 .comment {
   text-align: center;
   background-color: #66ccff;
