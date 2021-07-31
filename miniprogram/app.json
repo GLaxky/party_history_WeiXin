@@ -18,13 +18,15 @@
     "pages/placeInfo/index",
     "pages/personInfo/index",
     "pages/personAchievement/index",
-    "pages/personPlaces/index"
+    "pages/personPlaces/index",
+    "pages/charMap/index",
+    "pages/showAssociation/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "民国记忆",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"

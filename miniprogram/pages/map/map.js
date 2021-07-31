@@ -251,17 +251,23 @@ Page({
     onClose() {
       this.setData({ show: false });
     },
-    goToChooseCoreChar(){
-      wx.navigateTo({
-        url:'/pages/chooseCoreChar/chooseCoreChar'
-      })
-    },
-    goTocharInfo(e){
-      console.log(e)
 
+    goTocharInfo:function (e){
+      console.log(e)
+      if(e.detail.markerId==0){
+        wx.navigateTo({
+          url:`/pages/personInfo/index?char_id=${this.data.start_char_id}&envId=cloud1-0gn7op1be7f4656e`
+        })
+      }else if (e.detail.markerId==1){
+        wx.navigateTo({
+          url:`/pages/personInfo/index?char_id=${this.data.end_char_id}&envId=cloud1-0gn7op1be7f4656e`
+        })
+      }
+      
     },
 
     showAssociation:async function(){
+      var that = this;
       let tmpEndPlaceInfo=await this.getPlaceInfo(this.data.end_place_id);
       var mapCtx = wx.createMapContext('map');
       mapCtx.translateMarker({
@@ -281,8 +287,28 @@ Page({
             latitude: tmpEndPlaceInfo.latitude,
             longitude:  tmpEndPlaceInfo.longitude,
           });
+          that.addHistory()
         }
       })
+    },
+
+    addHistory:async function(){
+      var that =this;
+      return new Promise(function(resolve, reject){
+        wx.cloud.callFunction({
+          name: 'addCurrentPos',
+          data: {
+            start_char_id:parseInt(that.data.start_char_id),
+            start_place_id:parseInt(that.data.start_place_id),
+            end_char_id:parseInt(that.data.end_char_id),
+            end_place_id:parseInt(that.data.end_place_id),
+            openId:getApp().globalData.user_openId
+          },
+          success: res => {
+            resolve(res.result)
+          }
+          })
+        })
     }
   }
 )

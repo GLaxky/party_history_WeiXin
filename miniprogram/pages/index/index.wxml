@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
 
-  <view class="title">追寻党的记忆</view>
+  <view class="title">民国记忆</view>
 
   <view class="top_tip">小标题</view>
 

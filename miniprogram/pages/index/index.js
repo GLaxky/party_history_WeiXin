@@ -18,9 +18,9 @@ Page({
         title: '开始新的探索',
         page: 'chooseCoreChar'
       },
-       {
+      {
         title: '继续上一次探索',
-        page: 'getMiniProgramCode'
+        page: 'lastPos'
       },
     ]
     }, {
@@ -33,12 +33,14 @@ Page({
       }, {
         title: '党史地点探索成就',
         page: 'placeAchievement'
-      }, {
-        title: '待定',
-        page: 'selectRecord'
-      }, {
-        title: '待定',
-        page: 'sumRecord'
+      }, ]
+    }, {
+      title: '探索路线线索图',
+      tip: 'tip',
+      showItem: false,
+      item: [{
+        title: '查看',
+        page: 'charMap'
       }]
     }, {
       title: '待定',
@@ -46,15 +48,7 @@ Page({
       showItem: false,
       item: [{
         title: '待定',
-        page: 'uploadFile'
-      }]
-    }, {
-      title: '待定',
-      tip: '待定',
-      showItem: false,
-      item: [{
-        title: '待定',
-        page: 'deployService'
+        page: 'showAssociation'
       }]
     }],
     envList,
@@ -121,7 +115,7 @@ Page({
       
       app.globalData.user_openId=resp.result.openid,
       
-      console.log(resp.result.openid)
+      // console.log(resp.result.openid)
      wx.hideLoading()
    }).catch((e) => {
       this.setData({
@@ -171,10 +165,32 @@ Page({
     })
   },
 
-  jumpPage(e) {
-    wx.navigateTo({
-      url: `/pages/${e.currentTarget.dataset.page}/index?envId=${this.data.selectedEnv.envId}`,
-    })
+  jumpPage:async function(e) {
+    if(e.currentTarget.dataset.page=="lastPos"){
+      let tmp =await this.getLastPosition()
+      if(tmp==null){
+        wx.navigateTo({
+          url: `/pages/chooseCoreChar/index`,
+        })
+      }else{
+        if(tmp.start_char_id==0){
+          wx.navigateTo({
+            url: `/pages/map/map?end_char_id=${tmp.end_char_id}&end_place_id=${tmp.end_place_id}`,
+          })
+        }else{
+          wx.navigateTo({
+            url: `/pages/map/map?start_char_id=${tmp.start_char_id}&start_place_id=${tmp.start_place_id}&end_char_id=${tmp.end_char_id}&end_place_id=${tmp.end_place_id}`,
+          })
+        }
+        
+      }
+      
+    }else{
+      wx.navigateTo({
+        url: `/pages/${e.currentTarget.dataset.page}/index?envId=${this.data.selectedEnv.envId}`,
+      })
+    }
+    
   },
 
   onClickDatabase(powerList) {
@@ -208,5 +224,19 @@ Page({
     })
   },
   
+  getLastPosition:async function(){
+    return new Promise(function(resolve, reject){
+      wx.cloud.callFunction({
+        name: 'getLastPosition',
+        data: {
+          openId: app.globalData.user_openId,
+        },
+        success: res => {
+          console.log("getLastPosition"+res.result)
+          resolve(res.result)
+        }
+        })
+      })
+  }
   
 })
