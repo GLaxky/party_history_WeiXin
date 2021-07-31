@@ -59,7 +59,7 @@
   background-color: #66ccff;
 }
 
-.comment_detail_uid {
+.comment_detail_user_name {
   text-align: left;
   font-weight: bold;
 }

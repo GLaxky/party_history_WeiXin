@@ -1,4 +1,5 @@
 // miniprogram/pages/personInfo/index.js
+const app=getApp()
 Page({
 
   /**
@@ -9,7 +10,8 @@ Page({
     char_id: '',
     record: '',
     comment: '',
-    input_comment: ''
+    input_comment: '',
+    place_id: ''
   },
 
   /**
@@ -18,7 +20,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       envId: options.envId,
-      char_id: options.char_id
+      char_id: options.char_id,
+      place_id: options.place_id
     })
     if (this.data.char_id == -1) {
       this.setData({
@@ -59,6 +62,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(!this.data.char_id){
+      wx.showToast({
+        title: '提示：请探索该人物后再试',
+        icon: 'none'
+      })
+      return
+    }
     wx.showLoading({
       title: '',
     })
@@ -123,7 +133,7 @@ Page({
 
   jumpToPersonPlace: function () {
     wx.navigateTo({
-      url: '/pages/personPlaces/index?char_id=' + (this.data.char_id)
+      url: '/pages/placeInfo/index?place_id=' + (this.data.place_id)
     })
   },
 
@@ -143,9 +153,11 @@ Page({
       data: {
         type: 'insertComment',
         char_id: this.data.char_id,
-        comment: this.data.input_comment
+        comment: this.data.input_comment,
+        user_name: app.globalData.user_name
       }
-    }).then((resp)=>{
+    }).then((resp) => {
+      console.log(app.globalData.user_name);
       this.setData({
         input_comment: ''
       })

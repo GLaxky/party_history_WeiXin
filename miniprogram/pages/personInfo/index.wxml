@@ -6,7 +6,7 @@
 <view wx:if="{{char_id}}" class="personInfo">
   <view class="person-info-title">人物信息</view>
   <image class="person-info-img" src="{{record.image_url}}"></image>
-  <button class="button" bindtap="jumpToPersonPlace">进入人物相关地点</button>
+  <button wx:if="{{place_id}}" class="button" bindtap="jumpToPersonPlace">进入人物相关地点</button>
   <view class="person-info-content">
     <view>人物基本介绍</view>
     <view>{{record.cname}}</view>
@@ -21,7 +21,7 @@
     <button class="submit-btn" bindtap="submit">提交评论</button>
   </view>
   <view class='comment'  wx:for="{{comment}}" wx:key="_id">
-      <view class="comment_detail_uid">{{item.uid}}</view>
+      <view class="comment_detail_user_name">{{item.user_name}}</view>
       <view class="comment_detail_comment">{{item.comment}}</view>
   </view>
 </view>
