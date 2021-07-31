@@ -41,6 +41,7 @@ exports.main = async (event, context) => {
         if (personInfo[i].char_id == element) {
           personInfo[i].char_id = -1;
           personInfo[i].image_url = "../../images/wenhao.jpg";
+          personInfo[i].cname = "???";
         }
       }
     }
