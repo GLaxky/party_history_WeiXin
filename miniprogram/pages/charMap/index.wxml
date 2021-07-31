@@ -1,2 +1,4 @@
 <!--miniprogram/pages/charMap/index.wxml-->
-<text>miniprogram/pages/charMap/index.wxml</text>
+<image style="width: 750rpx; height: 490rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx" 
+  src="https://ftp.bmp.ovh/imgs/2021/07/e7bb88ee90031ab4.png"
+/>

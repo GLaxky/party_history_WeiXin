@@ -244,5 +244,11 @@ Page({
       })
     }
     )
+  },
+
+  goToPlaceInfo(e){
+    wx.navigateTo({
+      url:`/pages/placeInfo/index?place_id=${e.detail.markerId}&envId=cloud1-0gn7op1be7f4656e`
+    })
   }
 })

@@ -251,14 +251,19 @@ Page({
     onClose() {
       this.setData({ show: false });
     },
-    goToChooseCoreChar(){
-      wx.navigateTo({
-        url:'/pages/chooseCoreChar/chooseCoreChar'
-      })
-    },
-    goTocharInfo(e){
-      console.log(e)
 
+    goTocharInfo:function (e){
+      console.log(e)
+      if(e.detail.markerId==0){
+        wx.navigateTo({
+          url:`/pages/personInfo/index?char_id=${this.data.start_char_id}&envId=cloud1-0gn7op1be7f4656e`
+        })
+      }else if (e.detail.markerId==1){
+        wx.navigateTo({
+          url:`/pages/personInfo/index?char_id=${this.data.end_char_id}&envId=cloud1-0gn7op1be7f4656e`
+        })
+      }
+      
     },
 
     showAssociation:async function(){

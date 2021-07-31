@@ -1,0 +1,13 @@
+<!--miniprogram/pages/showAssociation/index.wxml-->
+<scroll-view class="container" scroll-y="true" bindscroll="scroll" scroll-top="{{scrollTop}}">
+  <view class='list'>
+    <view class='blank'></view>
+    <view>
+      <text class="txt-light">09:08</text> 很多人的一生，基本都是自己跟别人较劲，比如别人对自己的期待，比如把别人看得太重把自己看得太轻。其实一个人最应该考虑的问题是，自己如何与自己相处，比如人去楼空的时候如何照顾好自己的孤独，比如夜深人静的时候如何跟心灵沟通。自己跟自己能和谐共处，自己跟别人就能相安无事。
+    </view>
+    <view>
+      <text class="txt-light">19:08</text> 平和是待人处事的一种态度，也是做人酌一种美德。平和既是一种修养，又是一种工作方法。平和的人，从不被忙碌所萦绕，闲时吃紧，忙里悠闲。待人不严，教人勿高。宽严得宜，分寸得体。身心自在，能享受生活之乐趣。平和的人生，是和谐的人生，健康的人生。
+    </view>
+    <view class='blank'></view>
+  </view>
+</scroll-view>

@@ -48,7 +48,7 @@ Page({
       showItem: false,
       item: [{
         title: '待定',
-        page: ''
+        page: 'showAssociation'
       }]
     }],
     envList,

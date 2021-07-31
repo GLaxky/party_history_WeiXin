@@ -19,7 +19,8 @@
     "pages/personInfo/index",
     "pages/personAchievement/index",
     "pages/personPlaces/index",
-    "pages/charMap/index"
+    "pages/charMap/index",
+    "pages/showAssociation/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

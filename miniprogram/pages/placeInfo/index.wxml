@@ -1,5 +1,4 @@
 <!--miniprogram/pages/placeInfo/index.wxml-->
-<text>miniprogram/pages/placeInfo/index.wxml</text>
 <view class="placeInfo">
   <view class="place-info-title">{{reccord.place_name}}</view>
   <image class="place-info-img" src="{{record.image_url}}"></image>
