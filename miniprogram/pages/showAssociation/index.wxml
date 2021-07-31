@@ -1,4 +1,10 @@
 <!--miniprogram/pages/showAssociation/index.wxml-->
+<!-- <van-dialog
+  use-slot
+  title="标题"
+  show="{{ show }}"
+  bind:close="onClose"
+> -->
 <scroll-view class="container" scroll-y="true" bindscroll="scroll" scroll-top="{{scrollTop}}">
   <view class='list'>
     <view class='blank'></view>
@@ -11,3 +17,4 @@
     <view class='blank'></view>
   </view>
 </scroll-view>
+<!-- </van-dialog> -->

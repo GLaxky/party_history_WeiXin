@@ -16,3 +16,17 @@
   margin: 30rpx;
 
 }
+.container {
+  position:fixed;
+  top:0;
+  background-color: #FAEBD7;
+  height: 150rpx;
+}
+ 
+.txt-light {
+  color: #acadbe;
+}
+ 
+.blank {
+  height: 150rpx;
+}

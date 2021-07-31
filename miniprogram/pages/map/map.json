@@ -7,7 +7,8 @@
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
     "van-popup": "@vant/weapp/popup/index",
     "nextCharItem":"../../components/nextCharItem/nextCharItem",
-    "van-toast": "@vant/weapp/toast/index"
+    "van-toast": "@vant/weapp/toast/index",
+    "van-dialog": "@vant/weapp/dialog/index"
   },
 
   "navigationBarTitleText": "党史地图"

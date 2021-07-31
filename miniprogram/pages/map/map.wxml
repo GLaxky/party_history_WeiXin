@@ -1,5 +1,7 @@
 <!--miniprogram/pages/map/map.wxml-->
+
 <view style="width:100%;height:1000rps;text-align:center">
+      
 <map style="width:100%;height:100vh"
       id="map"
       longitude="{{coreLongitude}}"
@@ -16,7 +18,22 @@
   <van-button round  icon="completed" class="button" bindtap="showAssociation">记录手账</van-button>
   <van-button round  icon="flag-o" class="button" bindtap="showPopup">继续探索 </van-button>
 </view>
+<scroll-view class="container" scroll-y="true" bindscroll="scroll" scroll-top="{{scrollTop}}">
+      <view class='list'>
+    <view class='blank'></view>
+    <view>
+      <block wx:if="{{explored}}">
+            <text class="txt-light">{{associationContent}}</text>
+      </block>
+      <block wx:else> 
+            <text class="txt-light">{{logContent}}</text>
+      </block>
 
+      
+    </view>
+    <view class='blank'></view>
+  </view>
+</scroll-view>
 <van-popup show="{{ show }}" bind:close="onClose" custom-style="height: 40%" position="top">
 
       <view wx:if="{{next_items_list.length > 0}}"> 

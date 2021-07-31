@@ -6,7 +6,7 @@ cloud.init()
 // 云函数入口函数
 exports.main = async (event, context) => {
   const db = cloud.database();
-  console.log(event.char_id);
+  // console.log(event.char_id);
   return await db.collection("character")
     .where({
       char_id:parseInt(event.char_id)

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    scrollTop:0
+    scrollTop:0,
+    show: true,
   },
 
   /**
@@ -26,7 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-// 获取scroll-view的节点信息
+    // 获取scroll-view的节点信息
     //创建节点选择器
     var query = wx.createSelectorQuery();
     query.select('.container').boundingClientRect()
@@ -97,6 +98,6 @@ Page({
       })
       // console.log(res);
     })
-  }
+  },
   
 })

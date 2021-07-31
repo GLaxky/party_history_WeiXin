@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    logContent:"探索手账",
+    scrollTop:0,
     show: false,
     coreLongitude:0,
     corLatitude:0,
@@ -14,7 +16,9 @@ Page({
     start_place_id:0,
     end_char_id:0,
     end_place_id:0,
-    next_items_list:[]
+    next_items_list:[],
+    associationContent:"",
+    explored:false
   },
 
   /**
@@ -26,7 +30,7 @@ Page({
     if(options.start_char_id==null){
       //如果起始点为null
       let tmp=[];
-      
+      let content=await this.getAssociationContent(0,0,options.end_char_id,options.end_place_id)
       let tmpCharInfo=await this.getCharInfo(options.end_char_id);
       //console.log(tmpCharInfo)
       let tmpPlaceInfo=await this.getPlaceInfo(options.end_place_id);
@@ -61,6 +65,7 @@ Page({
         iconPath:"../../images/image-20210730152715120.png"
       });
       this.setData({
+        associationContent:content,
         start_char_id:0,
         start_place_id:0,
         end_char_id:options.end_char_id,
@@ -75,6 +80,7 @@ Page({
       let tmpStartPlaceInfo=await this.getPlaceInfo(options.start_place_id);
       let tmpEndCharInfo=await this.getCharInfo(options.end_char_id);
       let tmpEndPlaceInfo=await this.getPlaceInfo(options.end_place_id);
+      let content=await this.getAssociationContent(options.start_char_id,options.start_place_id,options.end_char_id,options.end_place_id);
       tmp.push({
         id: 0,
         latitude: parseFloat(tmpStartPlaceInfo.latitude),
@@ -126,6 +132,7 @@ Page({
         iconPath:"../../images/image-20210730152715120.png"
       });
       this.setData({
+        logContent:content,
         start_char_id:options.start_char_id,
         start_place_id:options.start_place_id,
         end_char_id:options.end_char_id,
@@ -148,6 +155,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // 获取scroll-view的节点信息
+    //创建节点选择器
+    var query = wx.createSelectorQuery();
+    query.select('.container').boundingClientRect()
+    query.select('.list').boundingClientRect()
+    query.exec((res) => {
+      var containerHeight = res[0].height;
+      var listHeight = res[1].height;
+ 
+      // 滚动条的高度增加
+      var interval = setInterval(() => {
+        if (this.data.scrollTop < listHeight - containerHeight) {
+          this.setData({
+            scrollTop: this.data.scrollTop + 2
+          })
+        } else {
+          // return
+          // clearInterval(interval);
+          this.setData({
+            scrollTop: 0
+          })
+        }
+      }, 100)
+    })
   },
 
   /**
@@ -288,6 +319,10 @@ Page({
             longitude:  tmpEndPlaceInfo.longitude,
           });
           that.addHistory()
+          that.addUserRecord()
+          that.setData({
+            explored:true
+          })
         }
       })
     },
@@ -309,6 +344,56 @@ Page({
           }
           })
         })
+    },
+
+    scroll: function () {
+      // 获取scroll-view的节点信息
+      //创建节点选择器
+      var query = wx.createSelectorQuery();
+      query.select('.list').boundingClientRect()
+      query.exec((res) => {
+        this.setData({
+          scrollTop: -(res[0].top)
+        })
+        // console.log(res);
+      })
+    },
+
+    getAssociationContent:async function(start_char_id,start_place_id,end_char_id,end_place_id){
+      return new Promise(function(resolve, reject){
+        wx.cloud.callFunction({
+          name: 'getAssociationContent',
+          data: {
+            start_char_id:parseInt(start_char_id),
+            start_place_id:parseInt(start_place_id),
+            end_char_id:parseInt(end_char_id),
+            end_place_id:parseInt(end_place_id),
+          },
+          success: res => {
+            resolve(res.result)
+          }
+          })
+        })
+    },
+
+    addUserRecord:async function(){
+      var that =this
+      return new Promise(function(resolve, reject){
+        wx.cloud.callFunction({
+          name: 'addUserRecord',
+          data: {
+            start_char_id:parseInt(that.data.start_char_id),
+            start_place_id:parseInt(that.data.start_place_id),
+            end_char_id:parseInt(that.data.end_char_id),
+            end_place_id:parseInt(that.data.end_place_id),
+            openId:getApp().globalData.user_openId
+          },
+          success: res => {
+            resolve(res.result)
+          }
+          })
+        })
     }
+   
   }
 )
