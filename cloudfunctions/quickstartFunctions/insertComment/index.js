@@ -13,7 +13,7 @@ exports.main = async (event, context) => {
     // data 字段表示需新增的 JSON 数据
     data: {
       char_id: Number(event.char_id),
-      uid: wxContext.OPENID,
+      user_name: event.user_name,
       comment: event.comment
     }
   })
