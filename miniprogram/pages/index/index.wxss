@@ -4,6 +4,10 @@ page {
   padding-top: 54rpx;
   background-color: #f6f6f6;
   padding-bottom: 60rpx;
+  background:url("https://s3.bmp.ovh/imgs/2021/08/1db656c40e3ab479.jpg");
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+  background-repeat: no-repeat;
 }
 
 .title {
@@ -93,11 +97,58 @@ page {
   margin-top: 25%;
 }
 
-.container{
+/* .container{
   padding: 15rpx;
   background-color: white;
 	border-radius: 37.5rpx;
   box-shadow: 5rpx 5rpx 5rpx 5rpx gray;
   justify-content: space-around;
   margin: 30rpx;
+} */
+
+.share{
+  background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png);
+  width: 300rpx;
+  height: 100rpx;
+  padding:0 20rpx;
+  position: absolute;
+  right: 32rpx;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-size: 300rpx 100rpx;
+  background-repeat:no-repeat;
+  border:none;
+}
+
+.userinfo-nickname{
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 1rpx;
+  background-color:whitesmoke;
+	border-radius: 20rpx;
+  box-shadow: 5rpx 5rpx 5rpx 5rpx gray;
+}
+
+userinfo-avatar{
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ 
+}
+
+.start{
+  background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png);
+  width: 400rpx;
+  height: 100rpx;
+  padding:0 20rpx;
+  position: absolute;
+  right: 32rpx;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-size: 400rpx 100rpx;
+  background-repeat:no-repeat;
+  border:none;
 }

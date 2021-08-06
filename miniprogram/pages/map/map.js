@@ -72,7 +72,8 @@ Page({
         end_place_id:options.end_place_id,
         markers:tmp,
         coreLongitude:parseFloat(tmpPlaceInfo.longitude),
-        coreLatitude:parseFloat(tmpPlaceInfo.latitude)
+        coreLatitude:parseFloat(tmpPlaceInfo.latitude),
+        explored:false,
       })
     }else{
       let tmp=[];
@@ -139,7 +140,8 @@ Page({
         end_place_id:options.end_place_id,
         markers:tmp,
         coreLongitude:parseFloat(tmpEndPlaceInfo.longitude),
-        coreLatitude:parseFloat(tmpEndPlaceInfo.latitude)
+        coreLatitude:parseFloat(tmpEndPlaceInfo.latitude),
+        explored:false,
       })
 
     }
@@ -217,8 +219,8 @@ Page({
   },
 
   goBackToHome(){
-    wx.navigateTo({
-      url:'/pages/index/index'
+    wx.redirectTo({
+      url:'/pages/menu/index'
     })
   },
 
@@ -284,14 +286,14 @@ Page({
     },
 
     goTocharInfo:function (e){
-      console.log(e)
+      // console.log(e)
       if(e.detail.markerId==0){
-        wx.navigateTo({
-          url:`/pages/personInfo/index?char_id=${this.data.start_char_id}&envId=cloud1-0gn7op1be7f4656e`
+        wx.redirectTo({
+          url:`/pages/personInfo/index?char_id=${this.data.start_char_id}&envId=cloud1-0gn7op1be7f4656e&place_id=${this.data.start_place_id}`
         })
       }else if (e.detail.markerId==1){
-        wx.navigateTo({
-          url:`/pages/personInfo/index?char_id=${this.data.end_char_id}&envId=cloud1-0gn7op1be7f4656e`
+        wx.redirectTo({
+          url:`/pages/personInfo/index?char_id=${this.data.end_char_id}&envId=cloud1-0gn7op1be7f4656e&place_id=${this.data.end_place_id}`
         })
       }
       
@@ -393,6 +395,16 @@ Page({
           }
           })
         })
+    },
+
+    goToChooseCoreChar(){
+      wx.redirectTo({
+        url: '../menu/index',
+        success: function(res){},
+        fail: function() {},
+        complete: function() {}
+      })
+
     }
    
   }

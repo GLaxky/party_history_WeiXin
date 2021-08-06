@@ -1,8 +1,11 @@
 <!--miniprogram/pages/chooseCoreChar/chooseCoreChar.wxml-->
+
+<view class="title" style="position: absolute; left: 104rpx; top: 162rpx; width: 240rpx; height: 1022rpx; display: block; box-sizing: border-box">选 择 你 想 要 探 索 的 起 始 人 物 吧</view>
+
 <view class="list">
-  <smallCharCard imageUrl="https://tse1-mm.cn.bing.net/th/id/R-C.943ae02afef815aa44dcea9ac6cf99e7?rik=Cveh3kUcChQXTA&riu=http%3a%2f%2fzqb.cyol.com%2fimages%2f1%2f20190508%2f1557253590908_1.jpg&ehk=WvTLNAvsiSYNt5SwNkUTBsPduM0jKTo0SiZivT%2bNgTI%3d&risl=&pid=ImgRaw" name="陈独秀" p_id="3" char_id="1"></smallCharCard>
-  <smallCharCard imageUrl="https://tse1-mm.cn.bing.net/th/id/R-C.e074485f798afed97d950dbc689131cc?rik=2NC0XseqJmOWRA&riu=http%3a%2f%2fdangshi.people.com.cn%2fmediafile%2f200606%2f20%2fF2006062015372200621.jpg&ehk=p%2f4VXMuobX5P1NbfD4elG%2b82%2b4EuXOMpjd2WKe%2b0nMI%3d&risl=&pid=ImgRaw" name="毛泽东" p_id="13"char_id="16"></smallCharCard>
-  <smallCharCard imageUrl="https://tse1-mm.cn.bing.net/th/id/R-C.e074485f798afed97d950dbc689131cc?rik=2NC0XseqJmOWRA&riu=http%3a%2f%2fdangshi.people.com.cn%2fmediafile%2f200606%2f20%2fF2006062015372200621.jpg&ehk=p%2f4VXMuobX5P1NbfD4elG%2b82%2b4EuXOMpjd2WKe%2b0nMI%3d&risl=&pid=ImgRaw" name="蔡元培" p_id="9" char_id="25"></smallCharCard>
-  <smallCharCard imageUrl="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fphotocdn.sohu.com%2F20110428%2FImg306599526.jpg&refer=http%3A%2F%2Fphotocdn.sohu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629103097&t=8ba36d5beb7199763f93d60a882331c1" name="李大钊" p_id="9" char_id="9"></smallCharCard>
-  <smallCharCard imageUrl="https://bkimg.cdn.bcebos.com/pic/f703738da9773912b31bf98a5e539118367adbb4448f?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto" name="胡适" p_id="9" char_id="24"></smallCharCard>
+  <smallCharCard imageUrl="https://tse1-mm.cn.bing.net/th/id/R-C.943ae02afef815aa44dcea9ac6cf99e7?rik=Cveh3kUcChQXTA&riu=http%3a%2f%2fzqb.cyol.com%2fimages%2f1%2f20190508%2f1557253590908_1.jpg&ehk=WvTLNAvsiSYNt5SwNkUTBsPduM0jKTo0SiZivT%2bNgTI%3d&risl=&pid=ImgRaw" name="陈 独 秀" p_id="3" char_id="1"></smallCharCard>
+  <smallCharCard imageUrl="https://tse1-mm.cn.bing.net/th/id/R-C.e074485f798afed97d950dbc689131cc?rik=2NC0XseqJmOWRA&riu=http%3a%2f%2fdangshi.people.com.cn%2fmediafile%2f200606%2f20%2fF2006062015372200621.jpg&ehk=p%2f4VXMuobX5P1NbfD4elG%2b82%2b4EuXOMpjd2WKe%2b0nMI%3d&risl=&pid=ImgRaw" name="毛 泽 东" p_id="13"char_id="16"></smallCharCard>
+  <smallCharCard imageUrl="https://tse1-mm.cn.bing.net/th/id/R-C.e074485f798afed97d950dbc689131cc?rik=2NC0XseqJmOWRA&riu=http%3a%2f%2fdangshi.people.com.cn%2fmediafile%2f200606%2f20%2fF2006062015372200621.jpg&ehk=p%2f4VXMuobX5P1NbfD4elG%2b82%2b4EuXOMpjd2WKe%2b0nMI%3d&risl=&pid=ImgRaw" name="蔡 元 培" p_id="9" char_id="25"></smallCharCard>
+  <smallCharCard imageUrl="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fphotocdn.sohu.com%2F20110428%2FImg306599526.jpg&refer=http%3A%2F%2Fphotocdn.sohu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629103097&t=8ba36d5beb7199763f93d60a882331c1" name="李 大 钊" p_id="9" char_id="9"></smallCharCard>
+  <smallCharCard imageUrl="https://bkimg.cdn.bcebos.com/pic/f703738da9773912b31bf98a5e539118367adbb4448f?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto" name="胡  适" p_id="9" char_id="24"></smallCharCard>
 </view>

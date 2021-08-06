@@ -2,7 +2,7 @@
 <van-dropdown-menu>
   <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onChange"/>
 </van-dropdown-menu>
-
+<van-dialog id="van-dialog" />
 <view style="">
 <map style="width:100%;height:100vh"
       longitude="{{coreLongitude}}"

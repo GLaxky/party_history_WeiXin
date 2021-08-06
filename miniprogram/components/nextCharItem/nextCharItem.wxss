@@ -1,1 +1,36 @@
 /* components/nextCharItem/nextCharItem.wxss */
+nextCharItem {
+	/* width: 260rpx; */
+  /* padding: 15rpx; */
+  /* background-color: white; */
+	border-radius: 37.5rpx;
+  /* box-shadow: 5rpx 5rpx 5rpx 5rpx gray; */
+  justify-content: space-around;
+  /* margin: 30rpx; */
+}
+
+.card {
+	background-image: url(https://s3.bmp.ovh/imgs/2021/08/55972604cf577176.png);
+  width: 97%;
+  height: 200rpx;
+  padding:0 20rpx;
+  /* position: absolute; */
+  margin: auto;
+  background-size: 97% 200rpx;
+  background-repeat:no-repeat;
+  border:none;
+	display: flex;
+	/* flex-direction: row; */
+}
+
+.name{
+  top:50rpx;
+  position: relative;
+	font-size: 35rpx;
+	font-weight: normal;
+}
+
+
+.imag{
+	margin:15rpx 1rpx;
+}

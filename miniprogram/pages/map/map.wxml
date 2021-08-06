@@ -18,7 +18,7 @@
   <van-button round  icon="completed" class="button" bindtap="showAssociation">记录手账</van-button>
   <van-button round  icon="flag-o" class="button" bindtap="showPopup">继续探索 </van-button>
 </view>
-<scroll-view class="container" scroll-y="true" bindscroll="scroll" scroll-top="{{scrollTop}}">
+<!-- <scroll-view class="container" scroll-y="true" bindscroll="scroll" scroll-top="{{scrollTop}}">
       <view class='list'>
     <view class='blank'></view>
     <view>
@@ -33,11 +33,14 @@
     </view>
     <view class='blank'></view>
   </view>
-</scroll-view>
+</scroll-view> -->
 <van-popup show="{{ show }}" bind:close="onClose" custom-style="height: 40%" position="top">
 
       <view wx:if="{{next_items_list.length > 0}}"> 
-            <view>选择你想要探索的下一个人物</view>
+            <view class="popup">
+                  <view class="title">
+                  <text class='text_title'>选择你想要探索的下一个人物</text>
+                  </view>
             <view class="next_items_list" wx:for="{{next_items_list}}" wx:for-index="idx" wx:for-item="item">
                   <nextCharItem 
                   start_char_id="{{end_char_id}}"
@@ -47,10 +50,16 @@
                   relation="{{item.relation}}"
                   ></nextCharItem>
             </view>
+            </view>
       </view>
       <view wx:else> 
-            <view>该路径探索完成，请选择新的核心人物吧</view>
-            <van-button icon="star-o" bindtap="goToChooseCoreChar">回到核心人物选择界面</van-button>
+            <view class="popup">
+                  <view class="title">
+                        <text class='text_title'>成功点亮本条故事线所有人物！</text>
+                  </view>
+            <button class="back_button" bindtap="goToChooseCoreChar">回到核心人物选择界面</button>
+            </view>
+            
       </view>
       
 </van-popup>

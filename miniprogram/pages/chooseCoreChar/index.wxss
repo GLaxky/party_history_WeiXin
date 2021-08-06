@@ -1,8 +1,32 @@
 /* miniprogram/pages/chooseCoreChar/chooseCoreChar.wxss */
+page {
+  padding-top: 54rpx;
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
+  background:url("https://s3.bmp.ovh/imgs/2021/08/3c6ce1f55ae171cb.jpg");
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+  background-repeat: no-repeat;
+}
+
 .list{
   position:fixed;
   left: 50%;
   display: flex;
   flex-direction: column;
   
+}
+
+.title{
+  writing-mode: vertical-lr;
+  /* background-image: url(https://s3.bmp.ovh/imgs/2021/08/1a88bcb355a51906.png); */
+  width: 200rpx;
+  height: 800rpx;
+  padding:0 20rpx;
+  position: absolute;
+  margin: auto;
+  background-size: 200rpx 400rpx;
+  background-repeat:no-repeat;
+  border:none;
+  font-size: 60rpx;
 }

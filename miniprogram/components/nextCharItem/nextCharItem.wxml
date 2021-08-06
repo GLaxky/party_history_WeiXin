@@ -3,13 +3,14 @@
   <view class="card">
     <van-image 
     round
-    width="5rem"
-    height="5rem"
+    width="6rem"
+    height="5.5rem"
     fit="contain"
     src="{{imageUrl}}"
+    class="imag"
     />
-    <text class="name">{{name}}</text>
-    <text class="ralation">{{relation}}</text>
+    <text class="name">姓名：{{name}}
+    与当前人物关系：{{relation}}</text>
   </view>
   
 </navigator>

@@ -226,6 +226,15 @@ Page({
         }
         })
       })
-  }
+  },
+
+  redirectBtn:function(){
+    wx.redirectTo({
+      url: '../menu/index',
+      success: function(res){},
+      fail: function() {},
+      complete: function() {}
+    })
+ },
   
 })

@@ -1,8 +1,8 @@
 /* components/smallCharCard/smallCharCard.wxss */
 smallCharCard {
-	width: 250rpx;
-  padding: 15rpx;
-  background-color: white;
+	width: 260rpx;
+  /* padding: 15rpx; */
+  /* background-color: white; */
 	border-radius: 37.5rpx;
   box-shadow: 5rpx 5rpx 5rpx 5rpx gray;
   justify-content: space-around;
@@ -10,14 +10,27 @@ smallCharCard {
 }
 
 .card {
+	background-image: url(https://s3.bmp.ovh/imgs/2021/08/b3b4255431f933f7.png);
+  width: 260rpx;
+  height: 200rpx;
+  padding:0 20rpx;
+  /* position: absolute; */
+  margin: auto;
+  background-size: 260rpx 200rpx;
+  background-repeat:no-repeat;
+  border:none;
 	display: flex;
 	flex-direction: row;
-	width: 200rpx;
 }
 .name{
+	writing-mode: vertical-lr;
+	margin:5rpx;
   position: relative;
-  height: 50rpx;
 	font-size: 35rpx;
 	font-weight: normal;
 	text-align: center;
+}
+
+.imag{
+	margin:20rpx 1rpx;
 }

@@ -7,8 +7,9 @@
     height="5rem"
     fit="contain"
     src="{{imageUrl}}"
+    class="imag"
     />
-    <text class="name"   style="position: relative; left: 0rpx; top: 25rpx">{{name}}</text>
+    <text class="name"   style="position: relative; left: 0rpx; top: 5rpx">{{name}}</text>
   </view>
   
 </navigator>

@@ -1,4 +1,6 @@
 // miniprogram/pages/placeAchievement/placeAchievement.js
+// import Dialog from '../../@vant/weapp/dist/dialog/dialog';
+
 Page({
 
   /**
@@ -62,7 +64,6 @@ Page({
     let tmp=[];
     for(let i=1;i<types.length;i++){
       tmp.push({
-        id: i,
         latitude: points[i].latitude,
         longitude:points[i].longitude,
         width: 35,
@@ -247,8 +248,36 @@ Page({
   },
 
   goToPlaceInfo(e){
-    wx.navigateTo({
-      url:`/pages/placeInfo/index?place_id=${e.detail.markerId}&envId=cloud1-0gn7op1be7f4656e`
-    })
+    if(e.detail.markerId>=100){
+      return
+    }
+    if(this.checkPlaceExplored(e.detail.markerId)){
+      wx.navigateTo({
+        url:`/pages/placeInfo/index?place_id=${e.detail.markerId}&envId=cloud1-0gn7op1be7f4656e`
+      })
+    }else{
+      Dialog.alert({
+        title: '提示',
+        message: '该地标还未探索过',
+      }).then(() => {
+        // on close
+      });
+    }
+    
+  },
+
+  checkPlaceExplored:async function(pid){
+      return new Promise(function(resolve, reject){
+        wx.cloud.callFunction({
+          name: 'checkPlace',
+          data: {
+            pid:parseInt(pid),
+            openId:getApp().globalData.user_openId
+          },
+          success: res => {
+            resolve(res.result)
+          }
+          })
+        })
   }
 })

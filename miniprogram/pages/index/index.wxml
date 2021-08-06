@@ -1,5 +1,6 @@
 <!--index.wxml-->
-<view class="container">
+
+<!-- <view class="container">
 
   <view class="title">民国记忆</view>
 
@@ -46,4 +47,19 @@
 
   <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
 
+</view> -->
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{!hasUserInfo}}">
+      <button class="share" style="background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png); position: absolute; left: 0rpx; top: 370rpx" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 微 信 登 陆 </button>
+    </block>
+    <block wx:else>
+      <image 
+      class="userinfo-avatar" 
+      src="{{userInfo.avatarUrl}}" 
+      fit="contain" style="left: 110rpx;width: 200rpx; height: 200rpx;top: 800rpx; position: relative"></image>
+      <text class="userinfo-nickname" style="width: 448rpx; height: 82rpx; top: 810rpx; position: relative">{{userInfo.nickName}}</text>
+      <button class="start" style="background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png); position: absolute; left: 0rpx; top: 1000rpx"  bindtap="redirectBtn"> 点击开始探索吧! </button>
+    </block>
+  </view>
 </view>
