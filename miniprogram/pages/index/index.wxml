@@ -57,8 +57,8 @@
       <image 
       class="userinfo-avatar" 
       src="{{userInfo.avatarUrl}}" 
-      fit="contain" style="left: 110rpx;width: 200rpx; height: 200rpx;top: 800rpx; position: relative"></image>
-      <text class="userinfo-nickname" style="width: 448rpx; height: 82rpx; top: 810rpx; position: relative">{{userInfo.nickName}}</text>
+      fit="contain" style="left: 30%;width: 200rpx; height: 200rpx;top: 800rpx; position: relative"></image>
+      <text class="userinfo-nickname" style=" top: 790rpx; position: relative">{{userInfo.nickName}}</text>
       <button class="start" style="background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png); position: absolute; left: 0rpx; top: 1000rpx"  bindtap="redirectBtn"> 点击开始探索吧! </button>
     </block>
   </view>

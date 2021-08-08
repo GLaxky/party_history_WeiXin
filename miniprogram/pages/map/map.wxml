@@ -12,29 +12,33 @@
       include-points="{{markers}}"
       bindcallouttap="goTocharInfo"></map>
 </view>
-
+<van-toast id="van-toast" />
 <view class="bt">
-  <van-button round  icon="home-o" class="button" bindtap="goBackToHome">回到主页</van-button>
+  <!-- <van-button round  icon="home-o" class="button" bindtap="goBackToHome">回到主页</van-button>
   <van-button round  icon="completed" class="button" bindtap="showAssociation">记录手账</van-button>
-  <van-button round  icon="flag-o" class="button" bindtap="showPopup">继续探索 </van-button>
+  <van-button round  icon="flag-o" class="button" bindtap="showPopup">继续探索 </van-button> -->
+  <button class="button" bindtap="goBackToHome">
+      <image style="width: 90rpx; height: 90rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  
+    src="https://s3.bmp.ovh/imgs/2021/08/28a78ba8ba454dbf.png"
+    class="imag"
+    />
+  <text class="btText" style="">回到主页</text>
+  </button>
+  <button class="button" bindtap="showAssociation">
+  <image style="width: 90rpx; height: 90rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  
+    src="https://s3.bmp.ovh/imgs/2021/08/8d429fe3aedfd2ca.png"
+    class="imag"
+    />
+  <text class="btText" style="">记录手账</text>
+  </button>
+  <button class="button" bindtap="showPopup"><image style="width: 90rpx; height: 90rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  
+    src="https://s3.bmp.ovh/imgs/2021/08/8adc41e7c2e9b919.png"
+    class="imag"
+    />
+  <text class="btText" style="">继续探索</text> </button>
 </view>
-<!-- <scroll-view class="container" scroll-y="true" bindscroll="scroll" scroll-top="{{scrollTop}}">
-      <view class='list'>
-    <view class='blank'></view>
-    <view>
-      <block wx:if="{{explored}}">
-            <text class="txt-light">{{associationContent}}</text>
-      </block>
-      <block wx:else> 
-            <text class="txt-light">{{logContent}}</text>
-      </block>
-
-      
-    </view>
-    <view class='blank'></view>
-  </view>
-</scroll-view> -->
-<van-popup show="{{ show }}" bind:close="onClose" custom-style="height: 40%" position="top">
+<view class="v" style="position: fixed; left: 346rpx; top: 593rpx; width: 60rpx; height: 35rpx; display: block; box-sizing: border-box;opacity:0">信封</view>
+<van-popup show="{{ show }}" bind:close="onClose" custom-style="height: 40%" position="bottom" round>
 
       <view wx:if="{{next_items_list.length > 0}}"> 
             <view class="popup">

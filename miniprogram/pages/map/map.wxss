@@ -1,12 +1,41 @@
 /* miniprogram/pages/map/map.wxss */
 .bt{
   position:fixed;
-  bottom:0;
-  left:10px
+  /* bottom:0;
+  left:10px */
+  /* padding: 5rpx; */
 }
 .button{
-  vertical-align:middle;
+  /* vertical-align:middle; */
+  background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png);
+  width: 300rpx;
+  height: 100rpx;
+  padding:0 20rpx;
+  /* position: absolute; */
+  /* right: 32rpx;
+  top: 0;
+  bottom: 0; */
+  margin: 10rpx;
+  background-size: 300rpx 100rpx;
+  background-repeat:no-repeat;
+  border:none;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+	flex-direction: row;
 }
+
+.imag{
+position: relative;
+padding: 10rpx;
+}
+.btText{
+  position: relative;
+  font-size: larger;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* margin: 15rpx; */
+  /* padding: 10rpx; */
+}
+
 .next_items_list{
   /* padding: 15rpx; */
   /* background-color: white; */

@@ -1,4 +1,5 @@
 // miniprogram/pages/chooseCoreChar/chooseCoreChar.js
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
 
   /**
@@ -26,7 +27,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    Toast.loading({
+      message: '加载中...',
+      forbidClick: true,
+      loadingType: 'spinner',
+    });
   },
 
   /**

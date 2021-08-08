@@ -4,6 +4,7 @@
 </van-dropdown-menu>
 <van-dialog id="van-dialog" />
 <view style="">
+  <van-toast id="van-toast" />
 <map style="width:100%;height:100vh"
       longitude="{{coreLongitude}}"
       latitude="{{coreLatitude}}"

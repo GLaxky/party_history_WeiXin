@@ -1,19 +1,22 @@
-// miniprogram/pages/charMap/index.js
-import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+// miniprogram/pages/association/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    show:true,
+    context:"",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.videoContext = wx.createVideoContext('myVideo')
+    this.setData({
+      context:options.content
+    })
   },
 
   /**
@@ -27,11 +30,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    Toast.loading({
-      message: '加载中...',
-      forbidClick: true,
-      loadingType: 'spinner',
-    });
+
   },
 
   /**
@@ -67,5 +66,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  clearVideo(){
+    this.setData({
+      show:false
+    })
+  },
+
+  goBack(){
+    wx.navigateBack({
+      delta: 1
+    })
   }
 })

@@ -1,0 +1,35 @@
+/* miniprogram/pages/association/index.wxss */
+page {
+  /* padding-top: 54rpx; */
+  background-color: #f6f6f6;
+  /* padding-bottom: 60rpx; */
+  background:url("https://s3.bmp.ovh/imgs/2021/08/ae3738cae98600ca.png");
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+  background-repeat: no-repeat;
+  height:100%
+}
+
+.v{
+  width: 100%;
+  height: 100%;
+}
+.t{
+  writing-mode: vertical-rl;
+  font-size: larger;
+  line-height:40px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bt{
+  background-image: url(https://s3.bmp.ovh/imgs/2021/08/0bb4d67a4810a2ea.png);
+  width: 300rpx;
+  height: 100rpx;
+  padding:0 20rpx;
+  margin: 20rpx;
+  background-size: 300rpx 100rpx;
+  background-repeat:no-repeat;
+  border:none;
+  border-radius: 37.5rpx;
+  box-shadow: 5rpx 5rpx 5rpx 5rpx gray;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

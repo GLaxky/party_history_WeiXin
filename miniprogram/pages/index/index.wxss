@@ -122,13 +122,20 @@ page {
 }
 
 .userinfo-nickname{
+  background-image: url(https://s3.bmp.ovh/imgs/2021/08/0bb4d67a4810a2ea.png);
   display: flex;
  align-items: center;
  justify-content: center;
- padding: 1rpx;
-  background-color:whitesmoke;
+ /* padding: 1rpx; */
+ width: 500rpx;
+ height: 100rpx;
+ padding:0 20rpx;
+ margin: 20rpx;
+ background-size: 500rpx 100rpx;
+ background-repeat:no-repeat;
+ border:none;
 	border-radius: 20rpx;
-  box-shadow: 5rpx 5rpx 5rpx 5rpx gray;
+  /* box-shadow: 5rpx 5rpx 5rpx 5rpx gray; */
 }
 
 userinfo-avatar{

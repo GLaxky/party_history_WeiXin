@@ -1,13 +1,11 @@
 // miniprogram/pages/map/map.js
-
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    logContent:"探索手账",
-    scrollTop:0,
     show: false,
     coreLongitude:0,
     corLatitude:0,
@@ -18,14 +16,16 @@ Page({
     end_place_id:0,
     next_items_list:[],
     associationContent:"",
-    explored:false
+    haveRecorded:false,
+    haveGoneIntoCharInfo:false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-    console.log(getApp().globalData)
+    
+    // console.log(getApp().globalData)
     this.getNextItemIist(options.end_place_id,options.end_char_id);
     if(options.start_char_id==null){
       //如果起始点为null
@@ -72,8 +72,7 @@ Page({
         end_place_id:options.end_place_id,
         markers:tmp,
         coreLongitude:parseFloat(tmpPlaceInfo.longitude),
-        coreLatitude:parseFloat(tmpPlaceInfo.latitude),
-        explored:false,
+        coreLatitude:parseFloat(tmpPlaceInfo.latitude)
       })
     }else{
       let tmp=[];
@@ -133,7 +132,7 @@ Page({
         iconPath:"../../images/image-20210730152715120.png"
       });
       this.setData({
-        logContent:content,
+        associationContent:content,
         start_char_id:options.start_char_id,
         start_place_id:options.start_place_id,
         end_char_id:options.end_char_id,
@@ -141,7 +140,6 @@ Page({
         markers:tmp,
         coreLongitude:parseFloat(tmpEndPlaceInfo.longitude),
         coreLatitude:parseFloat(tmpEndPlaceInfo.latitude),
-        explored:false,
       })
 
     }
@@ -157,30 +155,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // 获取scroll-view的节点信息
-    //创建节点选择器
-    var query = wx.createSelectorQuery();
-    query.select('.container').boundingClientRect()
-    query.select('.list').boundingClientRect()
-    query.exec((res) => {
-      var containerHeight = res[0].height;
-      var listHeight = res[1].height;
- 
-      // 滚动条的高度增加
-      var interval = setInterval(() => {
-        if (this.data.scrollTop < listHeight - containerHeight) {
-          this.setData({
-            scrollTop: this.data.scrollTop + 2
-          })
-        } else {
-          // return
-          // clearInterval(interval);
-          this.setData({
-            scrollTop: 0
-          })
-        }
-      }, 100)
-    })
+    Toast.loading({
+      message: '加载中...',
+      forbidClick: true,
+      loadingType: 'spinner',
+    });
   },
 
   /**
@@ -278,7 +257,25 @@ Page({
       },
     
     showPopup() {
-      this.setData({ show: true });
+      if(this.data.haveRecorded&&this.data.haveGoneIntoCharInfo){
+        this.setData({ show: true });
+      }else if(!(this.data.haveRecorded)&&this.data.haveGoneIntoCharInfo){
+        Toast({
+          message: '还未“记录旅行手账”噢~',
+          forbidClick: true,
+        });
+      }else if(this.data.haveRecorded&&!(this.data.haveGoneIntoCharInfo)){
+        Toast({
+          message: '还未“探索当前人物”噢~请点击地图上的气泡',
+          forbidClick: true,
+        });
+      }else{
+        Toast({
+          message: '还未“记录旅行手账”噢~',
+          forbidClick: true,
+        });
+      }
+      
     },
   
     onClose() {
@@ -288,11 +285,21 @@ Page({
     goTocharInfo:function (e){
       // console.log(e)
       if(e.detail.markerId==0){
-        wx.redirectTo({
+        wx.navigateTo({
           url:`/pages/personInfo/index?char_id=${this.data.start_char_id}&envId=cloud1-0gn7op1be7f4656e&place_id=${this.data.start_place_id}`
         })
       }else if (e.detail.markerId==1){
-        wx.redirectTo({
+        if(!this.data.haveRecorded){
+          Toast({
+            message: '还未“记录旅行手账”噢~',
+            forbidClick: true,
+          });
+          return
+        }
+        this.setData({
+          haveGoneIntoCharInfo:true,
+        })
+        wx.navigateTo({
           url:`/pages/personInfo/index?char_id=${this.data.end_char_id}&envId=cloud1-0gn7op1be7f4656e&place_id=${this.data.end_place_id}`
         })
       }
@@ -313,18 +320,35 @@ Page({
         moveWithRotate: true,
         duration:3000,
         animationEnd() {
-          console.log('animation end')
+          that.setData({
+            haveRecorded:true,
+            // coreLongitude:tmpEndPlaceInfo.longitude,
+            // coreLatitude:tmpEndPlaceInfo.longitude,
+          })
+          // console.log('animation end')
+          // mapCtx.moveToLocation({
+          //   latitude: tmpEndPlaceInfo.latitude,
+          //   longitude:  tmpEndPlaceInfo.longitude,
+          // });
+          that.animate('.v', [
+            {opacity:0.5, scale: [1, 1], rotate: 0, ease: 'ease-out',  translate:[-200,-200]},
+            {opacity:0.8, scale: [2, 2], rotate: 180, ease: 'ease-in', offset: 0.9},
+            {opacity:1, scale: [3, 3], rotate: 360 },
+            ], 4000, function () {
+              // this.clearAnimation('.v', { opacity: true, rotate: true }, function () {
+              //   console.log("清除了.v上的opacity和rotate属性")
+              // })
+              wx.navigateTo({
+                url: `../association/index?content=${that.data.associationContent}`,
+                success: function(res){},
+                fail: function() {},
+                complete: function() {}
+              })
+          }.bind(this))
         },
         success:function () {
-          mapCtx.moveToLocation({
-            latitude: tmpEndPlaceInfo.latitude,
-            longitude:  tmpEndPlaceInfo.longitude,
-          });
           that.addHistory()
           that.addUserRecord()
-          that.setData({
-            explored:true
-          })
         }
       })
     },
@@ -348,18 +372,6 @@ Page({
         })
     },
 
-    scroll: function () {
-      // 获取scroll-view的节点信息
-      //创建节点选择器
-      var query = wx.createSelectorQuery();
-      query.select('.list').boundingClientRect()
-      query.exec((res) => {
-        this.setData({
-          scrollTop: -(res[0].top)
-        })
-        // console.log(res);
-      })
-    },
 
     getAssociationContent:async function(start_char_id,start_place_id,end_char_id,end_place_id){
       return new Promise(function(resolve, reject){
@@ -398,7 +410,7 @@ Page({
     },
 
     goToChooseCoreChar(){
-      wx.redirectTo({
+      wx.navigateTo({
         url: '../menu/index',
         success: function(res){},
         fail: function() {},

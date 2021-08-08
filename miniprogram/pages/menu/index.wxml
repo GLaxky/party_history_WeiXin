@@ -1,6 +1,10 @@
 <!--miniprogram/pages/menu/index.wxml-->
-<button class="button" style=" position: absolute; left: 0rpx; top: 600rpx"  bindtap="showPopup1"> 开 始 探 索 </button>
-<button class="button" style=" position: absolute; left: 0rpx; top: 900rpx"  bindtap="showPopup2"> 探 索 成 就 </button>
+<button class="button" style=" position: absolute; left: 0rpx; top: 400rpx"  bindtap="showPopup1"> 开 始 探 索 </button>
+<button class="button" style=" position: absolute; left: 0rpx; top: 700rpx"  bindtap="showPopup2"> 探 索 成 就 </button>
+<navigator open-type="exit" target="miniProgram" >
+  <button class="button" style=" position: absolute; left: 0rpx; top: 1000rpx"  bindtap=""> 退 出 </button>
+</navigator>
+<van-toast id="van-toast" />
 
 <van-popup show="{{ show1 }}" bind:close="onClose1" round>
   <view >

@@ -1,6 +1,5 @@
 // miniprogram/pages/placeAchievement/placeAchievement.js
-// import Dialog from '../../@vant/weapp/dist/dialog/dialog';
-
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
 
   /**
@@ -17,7 +16,7 @@ Page({
     coreLatituse:0,
     coreLongitude:0,
     option1: [
-      { text: '大地点', value: 0 },
+      { text: '请选择地区', value: 0 },
       { text: '上海', value: 1 },
       { text: '武汉', value: 2 },
       { text: '北京', value: 3 },
@@ -25,6 +24,7 @@ Page({
       { text: '长沙', value: 5 },
     ],
     value1: 0,
+    check:[]
   },
 
   /**
@@ -85,15 +85,16 @@ Page({
       })
     }
     this.setData({
-      // value1:0,
       markers:tmp,
       bigPlaces:tmp,
       coreLatituse:31.227552,
       coreLongitude:114.305177,
     })
-  
+
+    let checkPlace = await this.checkPlaceExplored();
+    let tmp1=[];
     for(let j=1;j<types.length;j++){
-      let tmp1=[];
+      let tmp2=[]
       await db.collection("place")
       .where({
         big_place:parseInt(j)
@@ -108,40 +109,68 @@ Page({
     })
     .get()
     .then(res=>{
-      let tmp=[]
+      
       for(let i=0;i<res.data.length;i++){
-        tmp.push({
-          id: parseFloat(res.data[i].place_id),
-          latitude: parseFloat(res.data[i].latitude),
-          longitude: parseFloat(res.data[i].longitude),
-          width: 35,
-          height: 45,
-          callout: {
-            content: res.data[i].place_name,
-            color: '#ff0000',
-            fontSize: 14,
-            borderWidth: 2,
-            borderRadius: 10,
-            borderColor: '#000000',
-            bgColor: '#fff',
-            padding: 10,
-            display: 'ALWAYS',
-            textAlign: 'center',
-            anchorX:0,
-            anchorY:0
-          }
-        })
+        if(checkPlace.indexOf(parseInt(res.data[i].place_id))>=0){
+          tmp2.push({
+            iconPath:"../../images/打卡奖杯.png",
+            id: parseInt(res.data[i].place_id),
+            latitude: parseFloat(res.data[i].latitude),
+            longitude: parseFloat(res.data[i].longitude),
+            width: 35,
+            height: 45,
+            callout: {
+              content: res.data[i].place_name,
+              color: '#ff0000',
+              fontSize: 14,
+              borderWidth: 2,
+              borderRadius: 10,
+              borderColor: '#000000',
+              bgColor: '#fff',
+              padding: 10,
+              display: 'ALWAYS',
+              textAlign: 'center',
+              anchorX:0,
+              anchorY:0
+            }
+          })
+        }else{
+          tmp2.push({
+            id: -1,
+            iconPath:"../../images/未打卡奖杯.png",
+            latitude: parseFloat(res.data[i].latitude),
+            longitude: parseFloat(res.data[i].longitude),
+            width: 35,
+            height: 45,
+            callout: {
+              content: "待探索",
+              color: 'gray',
+              fontSize: 14,
+              borderWidth: 2,
+              borderRadius: 10,
+              borderColor: '#000000',
+              bgColor: '#fff',
+              padding: 10,
+              display: 'ALWAYS',
+              textAlign: 'center',
+              anchorX:0,
+              anchorY:0
+            }
+          })
+        }
+        
       }
-      tmp1.push(tmp);
+      
     }
     )
-    this.setData({
-      // value1:j,
-      // markers:tmp,
-      smallPlace:tmp1,
-    })
-    }
+    tmp1.push({index:j,
+              data:tmp2});
     
+    }
+    this.setData({
+      smallPlace:tmp1,
+      check:checkPlace,
+    })
   
     
   },
@@ -157,7 +186,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    Toast.loading({
+      message: '加载中...',
+      forbidClick: true,
+      loadingType: 'spinner',
+    });
   },
 
   /**
@@ -201,80 +234,46 @@ Page({
       })
       return
     }
-    const db = wx.cloud.database();
-    db.collection("place")
-      .where({
-        big_place:parseInt(e.detail)
-      })
-      .field({             
-      _id:false, 
-      place_id:true,        
-      latitude:true,
-      longitude:true,
-      place_name:true,
-      big_place:true,
-    })
-    .get()
-    .then(res=>{
-      let tmp=[]
-      for(let i=0;i<res.data.length;i++){
-        tmp.push({
-          id: parseFloat(res.data[i].place_id),
-          latitude: parseFloat(res.data[i].latitude),
-          longitude: parseFloat(res.data[i].longitude),
-          width: 35,
-          height: 45,
-          callout: {
-            content: res.data[i].place_name,
-            color: '#ff0000',
-            fontSize: 14,
-            borderWidth: 2,
-            borderRadius: 10,
-            borderColor: '#000000',
-            bgColor: '#fff',
-            padding: 10,
-            display: 'ALWAYS',
-            textAlign: 'center',
-            anchorX:0,
-            anchorY:0
-          }
+    for(let i=0;i<this.data.smallPlace.length;i++){
+      if(this.data.smallPlace[i].index==e.detail){
+        this.setData({
+          markers:this.data.smallPlace[i].data,
         })
+        break
       }
-      this.setData({
-        markers:tmp,
-      })
-    }
-    )
-  },
-
-  goToPlaceInfo(e){
-    if(e.detail.markerId>=100){
-      return
-    }
-    if(this.checkPlaceExplored(e.detail.markerId)){
-      wx.navigateTo({
-        url:`/pages/placeInfo/index?place_id=${e.detail.markerId}&envId=cloud1-0gn7op1be7f4656e`
-      })
-    }else{
-      Dialog.alert({
-        title: '提示',
-        message: '该地标还未探索过',
-      }).then(() => {
-        // on close
-      });
     }
     
   },
 
-  checkPlaceExplored:async function(pid){
+  goToPlaceInfo(e){
+    if(e.detail.markerId==-1){
+      Toast({
+        message: '该地点未解锁，快去探索吧！',
+        forbidClick: true,
+      });
+    }else if(e.detail.markerId>=100){
+      Toast({
+        message: '请先选择上方的地区噢~',
+        forbidClick: true,
+      });
+    }else{
+      wx.navigateTo({
+            url:`/pages/placeInfo/index?place_id=${e.detail.markerId}&envId=cloud1-0gn7op1be7f4656e`
+          })
+
+    }
+    
+  },
+
+  checkPlaceExplored:async function(){
       return new Promise(function(resolve, reject){
         wx.cloud.callFunction({
           name: 'checkPlace',
           data: {
-            pid:parseInt(pid),
             openId:getApp().globalData.user_openId
           },
           success: res => {
+            console.log("checkPlaceExplored "+res.result)
             resolve(res.result)
           }
           })

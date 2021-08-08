@@ -8,4 +8,5 @@
   <smallCharCard imageUrl="https://tse1-mm.cn.bing.net/th/id/R-C.e074485f798afed97d950dbc689131cc?rik=2NC0XseqJmOWRA&riu=http%3a%2f%2fdangshi.people.com.cn%2fmediafile%2f200606%2f20%2fF2006062015372200621.jpg&ehk=p%2f4VXMuobX5P1NbfD4elG%2b82%2b4EuXOMpjd2WKe%2b0nMI%3d&risl=&pid=ImgRaw" name="蔡 元 培" p_id="9" char_id="25"></smallCharCard>
   <smallCharCard imageUrl="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fphotocdn.sohu.com%2F20110428%2FImg306599526.jpg&refer=http%3A%2F%2Fphotocdn.sohu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629103097&t=8ba36d5beb7199763f93d60a882331c1" name="李 大 钊" p_id="9" char_id="9"></smallCharCard>
   <smallCharCard imageUrl="https://bkimg.cdn.bcebos.com/pic/f703738da9773912b31bf98a5e539118367adbb4448f?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto" name="胡  适" p_id="9" char_id="24"></smallCharCard>
+  <van-toast id="van-toast" />
 </view>
