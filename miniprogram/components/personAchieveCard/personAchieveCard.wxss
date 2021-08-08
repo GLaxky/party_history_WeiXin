@@ -26,3 +26,9 @@ personAchieveCard {
   width: 50rpx;
   height: 50rpx;
 }
+
+.achieve_image{
+  width: 50rpx;
+  height: 50rpx;
+  right: 0rpx;
+}

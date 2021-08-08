@@ -1,9 +1,17 @@
-
 /* miniprogram/pages/personAchievement/index.wxss */
+
+page {
+  padding-top: 54rpx;
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
+  background:url("https://s3.bmp.ovh/imgs/2021/08/3c6ce1f55ae171cb.jpg");
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+  background-repeat: repeat;
+}
 
 .code_box {
   text-align: center;
-  background-color: white;
   margin-top: 30rpx;
   padding: 17rpx;
 }

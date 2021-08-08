@@ -3,6 +3,8 @@
   <view class="card">
     <image class="image" src="{{imageUrl}}"/>
     <text class="name"   style="position: relative; left: 0rpx">{{name}}</text>
+    <image class="achieve_image" wx:if="{{char_id!=-1}}" src="../../images/完成印章.png"></image>
+    <image class="achieve_image" wx:if="{{char_id==-1}}" src="../../images/未探索人物旁边的小锁.png"></image>
   </view>
   
 </navigator>
