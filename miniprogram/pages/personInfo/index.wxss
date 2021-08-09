@@ -1,9 +1,26 @@
 /* miniprogram/pages/personInfo/index.wxss */
 
+page {
+  padding-top: 54rpx;
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
+  background:url("https://s3.bmp.ovh/imgs/2021/08/3c6ce1f55ae171cb.jpg");
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+  background-repeat: repeat;
+}
+
+.real-content{
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  margin-left: 45rpx;
+  margin-right: 45rpx;
+}
 .person-info-title {
   margin: 20rpx auto 0 auto;
   text-align: center;
-  background-color: #66ccff;
+  background: url("https://box.nju.edu.cn/f/3a67353c8f6645ab957b/?dl=1");
+  background-size:100% 100%;
   width: 100px;
 }
 
@@ -11,13 +28,16 @@
   margin-top: 20rpx;
   margin-bottom: 20rpx;
   text-align: center;
-  background-color: #66ccff;
+  background: url("https://box.nju.edu.cn/f/b91bbcc457a147629a8b/?dl=1");
+  background-size:100% 100%;
 }
 
 .person-info-story {
-  margin: 20rpx auto 0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
   text-align: center;
-  background-color: #66ccff;
+  background: url("https://box.nju.edu.cn/f/f03004bde1e14d3f9f7b/?dl=1");
+  background-size:100% 100%;
 }
 
 .person-info-img {
@@ -29,6 +49,13 @@
   text-align: center;
 }
 
+.before-submit-comment {
+  width: 100%;
+  height:80rpx;
+  background: url("https://box.nju.edu.cn/f/f2ed383eb09049909088/?dl=1");
+  background-size:100% 100%;
+}
+
 .submit-comment {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
@@ -36,17 +63,17 @@
 }
 
 .input-comment {
-  margin-left: 10rpx;
+  margin-left: 40rpx;
   margin-right: 10rpx;
-  width: 70%;
+  width: 65%;
   height: 50rpx;
-  background-color: #66ccff;
+  background-color: white;
 }
 
 .submit-btn {
   margin-left: 10rpx;
-  margin-right: 10rpx;
-  width: 25%;
+  margin-right: 40rpx;
+  width: 20%;
   height: 50rpx;
   font-size: x-small;
   text-align: center;
@@ -54,9 +81,16 @@
   background-color: greenyellow;
 }
 
+.all-comment {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  width: 100%;
+  background: url("https://box.nju.edu.cn/f/415e570cdc604981822a/?dl=1");
+  background-size: 100% 10000%;
+}
+
 .comment {
   text-align: center;
-  background-color: #66ccff;
 }
 
 .comment_detail_user_name {
@@ -70,7 +104,10 @@
 }
 
 .button {
-  background-color: greenyellow;
-  width: 300rpx;
-  font-size: x-small;
+  background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png);
+  background-size: 400rpx 100rpx;
+  width: 400rpx;
+  height: 100rpx;
+  text-align: center;
+  vertical-align: middle;
 }

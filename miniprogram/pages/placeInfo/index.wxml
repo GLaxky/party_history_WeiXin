@@ -1,11 +1,27 @@
 <!--miniprogram/pages/placeInfo/index.wxml-->
 <view class="placeInfo">
-  <view class="place-info-title">{{reccord.place_name}}</view>
+  <view class="place-info-title">{{record.place_name}}</view>
   <image class="place-info-img" src="{{record.image_url}}"></image>
   <view class='place-info-basic'>
-    <view>{{reccord.place_name}}</view>
-    <view>{{record.address}}</view>
+    <view class="real-content">
+      <text>\n</text>
+      <view>{{record.place_name}}</view>
+      <view>{{record.address}}</view>
+      <text>\n</text>
+    </view>
   </view>
-  <view class="place-info-intro">{{record.descrip}}</view>
-  <view class="place-info-story">{{record.story}}</view>
+  <view class="place-info-intro">
+    <view class="real-content">
+      <text>\n</text>
+      {{record.descrip}}
+    <text>\n</text>
+    </view>
+  </view>
+  <view class="place-info-story">
+    <view class="real-content">
+      <text>\n</text>
+      {{record.story}}
+      <text>\n</text>
+    </view>
+  </view>
 </view>

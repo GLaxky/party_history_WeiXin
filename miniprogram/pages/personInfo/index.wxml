@@ -2,24 +2,44 @@
 <view wx:if="{{!char_id}}">请探索该人物后再试</view>
 
 <view wx:if="{{char_id}}" class="personInfo">
-  <view class="person-info-title">人物信息</view>
+  <view class="person-info-title">{{record.cname}}</view>
   <image class="person-info-img" src="{{record.image_url}}"></image>
-  <button wx:if="{{place_id}}" class="button" bindtap="jumpToPersonPlace">进入人物相关地点</button>
+  <button wx:if="{{place_id}}" class="button" bindtap="jumpToPersonPlace">人物相关地点</button>
   <view class="person-info-content">
+    <view class="real-content">
+    <text>\n</text>
     <view>人物基本介绍</view>
     <view>{{record.cname}}</view>
-    <view>性别</view>
     <view>{{record.intro}}</view>
     <view>{{record.birth}}<text>-</text>{{record.death}}</view>
     <view>{{record.masterpieces}}</view>
+    <text>\n</text>
+    </view>
   </view>
-  <view class="person-info-content">{{record.story}}</view>
+  <view class="person-info-story">
+  <view class="real-content">
+    <text>\n</text>
+    <text>\n</text>
+    <text>\n</text>
+    <text>\n</text>
+    {{record.story}}
+    <text>\n</text>
+    <text>\n</text>
+    <text>\n</text>
+    <text>\n</text>
+  </view>
+  </view>
+  <view class="before-submit-comment"></view>
   <view class="submit-comment">
     <input bindinput="input_comment" class="input-comment" type="text" value="{{input_comment}}" placeholder="请输入你的评论"></input>
-    <button class="submit-btn" bindtap="submit">提交评论</button>
+    <button class="submit-btn" bindtap="submit">提交</button>
   </view>
-  <view class='comment'  wx:for="{{comment}}" wx:key="_id">
-      <view class="comment_detail_user_name">{{item.user_name}}</view>
-      <view class="comment_detail_comment">{{item.comment}}</view>
+  <view class="all-comment">
+    <view class='comment'  wx:for="{{comment}}" wx:key="_id">
+      <view class="real-content">
+        <view class="comment_detail_user_name">{{item.user_name}}</view>
+        <view class="comment_detail_comment">{{item.comment}}</view>
+      </view>
+    </view>
   </view>
 </view>
