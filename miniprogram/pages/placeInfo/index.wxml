@@ -13,14 +13,18 @@
   <view class="place-info-intro">
     <view class="real-content">
       <text>\n</text>
+      <text>\n</text>
       {{record.descrip}}
-    <text>\n</text>
+      <text>\n</text>
+      <text>\n</text>
     </view>
   </view>
   <view class="place-info-story">
     <view class="real-content">
       <text>\n</text>
+      <text>\n</text>
       {{record.story}}
+      <text>\n</text>
       <text>\n</text>
     </view>
   </view>

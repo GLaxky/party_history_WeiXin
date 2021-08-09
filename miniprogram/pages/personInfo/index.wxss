@@ -16,6 +16,7 @@ page {
   margin-left: 45rpx;
   margin-right: 45rpx;
 }
+
 .person-info-title {
   margin: 20rpx auto 0 auto;
   text-align: center;
