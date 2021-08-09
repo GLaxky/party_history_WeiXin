@@ -64,6 +64,7 @@ Page({
     let tmp=[];
     for(let i=1;i<types.length;i++){
       tmp.push({
+        id:0,
         latitude: points[i].latitude,
         longitude:points[i].longitude,
         width: 35,
@@ -251,7 +252,7 @@ Page({
         message: '该地点未解锁，快去探索吧！',
         forbidClick: true,
       });
-    }else if(e.detail.markerId>=100){
+    }else if(e.detail.markerId==0){
       Toast({
         message: '请先选择上方的地区噢~',
         forbidClick: true,

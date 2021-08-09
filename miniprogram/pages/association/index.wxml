@@ -10,7 +10,7 @@ enable-progress-gesture="{{false}}"
 ></video>
 </block>
 <block wx:else> 
-  <text class="t" style="position: relative; left: 232rpx; top: 245rpx; width: 479rpx; height: 932rpx; display: block; box-sizing: border-box">
+  <text class="t" id="t1" style="position: relative; left: 241rpx; top: 156rpx; width: 479rpx; height: 1089rpx; display: block; box-sizing: border-box">
   {{context}}
 </text>
 <button class="bt" style="position: absolute; left: 71rpx; top: 1225rpx" bindtap="goBack">返回探索地图</button>

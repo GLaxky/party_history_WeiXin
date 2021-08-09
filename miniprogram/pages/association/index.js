@@ -17,6 +17,7 @@ Page({
     this.setData({
       context:options.content
     })
+    
   },
 
   /**
@@ -30,7 +31,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // this.animate('#t1', [
+    //   {opacity:0.3},
+    //   {opacity:0.6},
+    //   {opacity:1},
+    //   ], 1000, function () {
+    //     console.log("donghua")
+    // }.bind(this))
   },
 
   /**

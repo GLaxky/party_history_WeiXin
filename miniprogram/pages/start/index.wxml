@@ -1,2 +1,16 @@
 <!--miniprogram/pages/start/index.wxml-->
-<text>miniprogram/pages/start/index.wxml</text>
+<!-- <text>miniprogram/pages/start/index.wxml</text> -->
+<view class="tip">点击继续</view>
+<view class="v" bindtap="showText" style="position: relative; left: 0rpx; top: 24rpx">
+  <text class="p" id="p1" >乱世从不是才子佳人的花前月下，醉生梦死</text>
+  <text class="p" id="p2" >而是民不聊生，哀鸿遍野。</text>
+  <text class="p" id="p3" >党史从不只是历史书上一行行的文字，</text>
+  <text class="p" id="p4" >而是无数共产党人、无数革命先烈</text>
+  <text class="p" id="p5">踏破黑暗 无畏前行的中国画卷。</text>
+  <text class="p" id="p6" >从五个核心人物开始</text>
+  <text class="p" id="p7" >重温那段激动人心的历史，</text>
+  <text class="p" id="p8" >感受革命先辈</text>
+  <text class="p" id="p9" >在那段峥嵘岁月里的热血与活力，</text>
+  <text class="p" id="p10" >感受了他们对共产主义事业</text>
+  <text class="p" id="p11">崇高的信仰和不懈的追求</text>
+</view>
