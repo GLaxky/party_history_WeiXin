@@ -1,5 +1,4 @@
 <!--miniprogram/pages/association/index.wxml-->
-<!-- <text>miniprogram/pages/association/index.wxml</text> -->
 <block wx:if="{{show}}"> 
   <video class="v" id="myVideo" src="https://weixin-lxk.oss-cn-beijing.aliyuncs.com/过渡视频.mp4?versionId=CAEQERiBgICK0_uV2RciIDBmNzZiMmVhZjdmOTQyYWVhMzRhYzc2ODM5OTA0NjJm"  autoplay bindended="clearVideo" style="" object-fit="fill"
 show-progress="{{false}}"

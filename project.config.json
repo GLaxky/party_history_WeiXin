@@ -22,7 +22,7 @@
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": true,
+    "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -34,9 +34,10 @@
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true,
+    "useStaticServer": false,
     "showES6CompileOption": false
   },
-  "appid": "wx4626dbaeef9244a1",
+  "appid": "wx7a954bfe7104b92a",
   "projectname": "miniprogram-1",
   "libVersion": "2.14.1",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",

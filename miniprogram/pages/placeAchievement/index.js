@@ -20,7 +20,7 @@ Page({
       { text: '上海', value: 1 },
       { text: '武汉', value: 2 },
       { text: '北京', value: 3 },
-      { text: '济南', value: 4 },
+      { text: '山东', value: 4 },
       { text: '长沙', value: 5 },
     ],
     value1: 0,
@@ -33,7 +33,7 @@ Page({
   onLoad:async function (options) {
     const db = wx.cloud.database();
     let types=[
-      "ALL","上海","武汉","北京","济南","长沙",
+      "ALL","上海","武汉","北京","山东","长沙",
     ];
     let points=[
       {
@@ -259,7 +259,7 @@ Page({
       });
     }else{
       wx.navigateTo({
-            url:`/pages/placeInfo/index?place_id=${e.detail.markerId}&envId=cloud1-0gn7op1be7f4656e`
+            url:`/pages/placeInfo/index?place_id=${e.detail.markerId}&envId=cloud-environment-6e21xvc5d21990`
           })
 
     }

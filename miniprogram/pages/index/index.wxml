@@ -1,65 +1,18 @@
 <!--index.wxml-->
 
-<!-- <view class="container">
-
-  <view class="title">民国记忆</view>
-
-  <view class="top_tip">小标题</view>
-
-  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
-    <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
-      <view class="power_info_text">
-        <view class="power_info_text_title">{{power.title}}</view>
-        <view class="power_info_text_tip">{{power.tip}}</view>
-      </view>
-      <image wx:if="{{!power.showItem}}" class="power_info_more" src="../../images/arrow.svg"></image>
-      <image wx:if="{{power.showItem}}" class="power_info_less" src="../../images/arrow.svg"></image>
-    </view>
-    <view wx:if="{{power.showItem}}">
-      <view wx:key="title" wx:for="{{power.item}}">
-        <view class="line"></view>
-        <view class="power_item" bindtap="jumpPage" data-page="{{item.page}}">
-          <view class="power_item_title">{{item.title}}</view>
-          <image class="power_item_icon" src="../../images/arrow.svg"></image>
-        </view>
-      </view>
-    </view>
-  </view>
-
 <view class="container">
   <view class="userinfo">
-    <block wx:if="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 微信登陆 </button>
-    </block>
-    <block wx:else>
-      <van-image 
-      bindtap="bindViewTap" 
-      class="userinfo-avatar" 
-      src="{{userInfo.avatarUrl}}" 
-      width="5rem"
-      height="5rem"
-      fit="contain"></van-image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-</view>
-  <view class="environment" bindtap="onChangeShowEnvChoose">当前环境 {{ selectedEnv.alias }}</view>
-
-  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
-
-</view> -->
-<view class="container">
-  <view class="userinfo">
-    <block wx:if="{{!hasUserInfo}}">
+    <view wx:if="{{!hasUserInfo}}">
       <button class="share" style="background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png); position: absolute; left: 0rpx; top: 370rpx" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 微 信 登 陆 </button>
-    </block>
-    <block wx:else>
+    </view>
+    <view class="block" wx:else>
+    <!-- <view class="block"  style=""> -->
       <image 
       class="userinfo-avatar" 
       src="{{userInfo.avatarUrl}}" 
-      fit="contain" style="left: 30%;width: 200rpx; height: 200rpx;top: 800rpx; position: relative"></image>
-      <text class="userinfo-nickname" style=" top: 790rpx; position: relative">{{userInfo.nickName}}</text>
-      <button class="start" style="background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png); position: absolute; left: 0rpx; top: 1000rpx"  bindtap="redirectBtn"> 点击开始探索吧! </button>
-    </block>
+      fit="contain" style="left: 0rpx; width: 200rpx; height: 200rpx; position: relative; top: 0rpx"></image>
+      <text class="userinfo-nickname" style="; position: relative">{{userInfo.nickName}}</text>
+      <button class="start" style="background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png); position: relative; left: 0rpx; "  bindtap="redirectBtn"> 点击开始探索吧! </button>
+    </view>
   </view>
 </view>
