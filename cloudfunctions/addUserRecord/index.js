@@ -9,6 +9,7 @@ exports.main = async (event, context) => {
 
   const db = cloud.database();
   let aid=0
+
   await db.collection("association")
     .where({
       start_char_id:parseInt(event.start_char_id),
@@ -25,6 +26,26 @@ exports.main = async (event, context) => {
     })
 
     try{
+      let flag=false;
+      await db.collection("user_record")
+      .where({
+        association_id:parseInt(aid),
+        uid:event.openId
+      }) 
+      .get()
+      .then(res=>{
+        // aid=res.data[0].association_id
+        if(res.data.length==0){
+          flag=true;
+        }
+      })
+      .catch(err => {
+        console.error(err)
+      })
+      if(!flag){
+        return true
+      }
+      
       await db.collection("user_record").add({
         data:{
           association_id:parseInt(aid),

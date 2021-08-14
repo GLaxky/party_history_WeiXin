@@ -230,7 +230,7 @@ Page({
 
   redirectBtn:function(){
     wx.redirectTo({
-      url: '../menu/index',
+      url: '../start/index',
       success: function(res){},
       fail: function() {},
       complete: function() {}

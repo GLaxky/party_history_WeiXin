@@ -42,7 +42,7 @@ Page({
         width: 35,
         height: 45,
         callout: {
-          content: tmpCharInfo.cname+tmpPlaceInfo.place_name,
+          content: tmpCharInfo.cname+"\n"+tmpPlaceInfo.place_name,
           color: '#ff0000',
           fontSize: 14,
           borderWidth: 2,
@@ -300,7 +300,7 @@ Page({
           haveGoneIntoCharInfo:true,
         })
         wx.navigateTo({
-          url:`/pages/personInfo/index?char_id=${this.data.end_char_id}&envId=cloud1-0gn7op1be7f4656e&place_id=${this.data.end_place_id}`
+          url:`/pages/personInfo/index?char_id=${this.data.end_char_id}&envId=cloud-environment-6e21xvc5d21990&place_id=${this.data.end_place_id}`
         })
       }
       

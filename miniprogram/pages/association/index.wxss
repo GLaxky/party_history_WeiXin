@@ -19,6 +19,7 @@ page {
   font-size: larger;
   line-height:40px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 1;
 }
 .bt{
   background-image: url(https://s3.bmp.ovh/imgs/2021/08/0bb4d67a4810a2ea.png);

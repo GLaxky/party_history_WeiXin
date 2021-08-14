@@ -1,5 +1,4 @@
 <!--miniprogram/pages/association/index.wxml-->
-<!-- <text>miniprogram/pages/association/index.wxml</text> -->
 <block wx:if="{{show}}"> 
   <video class="v" id="myVideo" src="https://weixin-lxk.oss-cn-beijing.aliyuncs.com/过渡视频.mp4?versionId=CAEQERiBgICK0_uV2RciIDBmNzZiMmVhZjdmOTQyYWVhMzRhYzc2ODM5OTA0NjJm"  autoplay bindended="clearVideo" style="" object-fit="fill"
 show-progress="{{false}}"
@@ -10,7 +9,7 @@ enable-progress-gesture="{{false}}"
 ></video>
 </block>
 <block wx:else> 
-  <text class="t" style="position: relative; left: 232rpx; top: 245rpx; width: 479rpx; height: 932rpx; display: block; box-sizing: border-box">
+  <text class="t" id="t1" style="position: relative; left: 241rpx; top: 156rpx; width: 479rpx; height: 1089rpx; display: block; box-sizing: border-box">
   {{context}}
 </text>
 <button class="bt" style="position: absolute; left: 71rpx; top: 1225rpx" bindtap="goBack">返回探索地图</button>

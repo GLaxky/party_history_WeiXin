@@ -20,7 +20,7 @@ Page({
       { text: '上海', value: 1 },
       { text: '武汉', value: 2 },
       { text: '北京', value: 3 },
-      { text: '济南', value: 4 },
+      { text: '山东', value: 4 },
       { text: '长沙', value: 5 },
     ],
     value1: 0,
@@ -33,7 +33,7 @@ Page({
   onLoad:async function (options) {
     const db = wx.cloud.database();
     let types=[
-      "ALL","上海","武汉","北京","济南","长沙",
+      "ALL","上海","武汉","北京","山东","长沙",
     ];
     let points=[
       {
@@ -64,6 +64,7 @@ Page({
     let tmp=[];
     for(let i=1;i<types.length;i++){
       tmp.push({
+        id:0,
         latitude: points[i].latitude,
         longitude:points[i].longitude,
         width: 35,
@@ -251,14 +252,14 @@ Page({
         message: '该地点未解锁，快去探索吧！',
         forbidClick: true,
       });
-    }else if(e.detail.markerId>=100){
+    }else if(e.detail.markerId==0){
       Toast({
         message: '请先选择上方的地区噢~',
         forbidClick: true,
       });
     }else{
       wx.navigateTo({
-            url:`/pages/placeInfo/index?place_id=${e.detail.markerId}&envId=cloud1-0gn7op1be7f4656e`
+            url:`/pages/placeInfo/index?place_id=${e.detail.markerId}&envId=cloud-environment-6e21xvc5d21990`
           })
 
     }

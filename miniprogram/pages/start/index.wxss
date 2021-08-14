@@ -1,0 +1,32 @@
+/* miniprogram/pages/start/index.wxss */
+page {
+  /* padding-top: 54rpx; */
+  background-color: #f6f6f6;
+  /* padding-bottom: 60rpx; */
+  background:url("https://s3.bmp.ovh/imgs/2021/08/3c6ce1f55ae171cb.jpg");
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.v{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.p{
+  margin: 30rpx;
+  font-size: large;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
+}
+.tip{
+  color: gray;
+}

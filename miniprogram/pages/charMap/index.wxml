@@ -1,5 +1,5 @@
 <!--miniprogram/pages/charMap/index.wxml-->
 <image style="width: 743rpx; height: 1323rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx" 
-  src="https://s3.bmp.ovh/imgs/2021/08/67089926f9b8036c.png"
+  src="https://s3.bmp.ovh/imgs/2021/08/cc59bb661f07decb.png"
 />
 <van-toast id="van-toast" />
