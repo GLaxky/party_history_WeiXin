@@ -1,4 +1,5 @@
 // miniprogram/pages/start/index.js
+const back = wx.getBackgroundAudioManager();
 Page({
 
   /**
@@ -8,11 +9,23 @@ Page({
     tapCount:0,
   },
 
+
+  backmusic:function(){
+    player();
+    function player(){
+      back.title = "victory";
+      back.src = "https://weixin-lxk.oss-cn-beijing.aliyuncs.com/victory.mp3?versionId=CAEQFBiBgMCUgbWT2hciIDI2N2U2Zjg3ODFjMTQwNmJhM2FiYTEyY2M3OTlhZGIx";
+      back.onEnded(() => {
+        player();
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.backmusic();   
   },
 
   /**
@@ -40,7 +53,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    back.stop()
   },
 
   /**

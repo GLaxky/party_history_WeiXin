@@ -1,4 +1,8 @@
 <!--miniprogram/pages/menu/index.wxml-->
+<block wx:if="{{checkFull}}">
+  <button class="special" style="position: absolute; left: 470rpx; top: 191rpx; width: 135rpx; height: 218rpx; display: block; box-sizing: border-box" bindtap="goToEnd">全成就达成</button>
+</block>
+
 <button class="button" style=" position: absolute; left: 0rpx; top: 400rpx"  bindtap="showPopup1"> 开 始 探 索 </button>
 <button class="button" style=" position: absolute; left: 0rpx; top: 700rpx"  bindtap="showPopup2"> 探 索 成 就 </button>
 <navigator open-type="exit" target="miniProgram" >

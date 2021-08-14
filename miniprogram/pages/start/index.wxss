@@ -23,8 +23,9 @@ page {
 
 .p{
   margin: 30rpx;
-  font-size: large;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: larger;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family:Microsoft Yahei;
   opacity: 0;
 }
 .tip{

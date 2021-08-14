@@ -53,7 +53,7 @@ Page({
           display: 'ALWAYS',
           textAlign: 'center',
           anchorX:0,
-          anchorY:0
+          anchorY:-25
         }
       });
       tmp.push({
@@ -62,7 +62,22 @@ Page({
         longitude: parseFloat(tmpPlaceInfo.longitude),
         width: 35,
         height: 45,
-        iconPath:"../../images/image-20210730152715120.png"
+        iconPath:"../../images/image-20210730152715120.png",
+        callout: {
+          content: "我的位置",
+          color: 'black',
+          fontSize: 14,
+          // borderWidth: 2,
+          // borderRadius: 10,
+          borderColor: '#000000',
+          bgColor: '#fff',
+          padding: 10,
+          display: 'BYCLICK',
+          textAlign: 'center',
+          anchorX:0,
+          anchorY:0,
+          // alpha:0.5
+        }
       });
       this.setData({
         associationContent:content,
@@ -99,7 +114,7 @@ Page({
           display: 'ALWAYS',
           textAlign: 'center',
           anchorX:0,
-          anchorY:0
+          anchorY:-25
         }
       });
       tmp.push({
@@ -120,7 +135,7 @@ Page({
           display: 'ALWAYS',
           textAlign: 'center',
           anchorX:0,
-          anchorY:0
+          anchorY:-25
         }
       });
       tmp.push({
@@ -129,7 +144,22 @@ Page({
         longitude: parseFloat(tmpStartPlaceInfo.longitude),
         width: 35,
         height: 45,
-        iconPath:"../../images/image-20210730152715120.png"
+        iconPath:"../../images/image-20210730152715120.png",
+        callout: {
+          content: "我的位置",
+          color: 'black',
+          fontSize: 14,
+          // borderWidth: 2,
+          // borderRadius: 10,
+          borderColor: '#000000',
+          bgColor: '#fff',
+          padding: 10,
+          display: 'BYCLICK',
+          textAlign: 'center',
+          anchorX:0,
+          anchorY:0,
+          // alpha:0.5
+        }
       });
       this.setData({
         associationContent:content,
@@ -261,7 +291,7 @@ Page({
         this.setData({ show: true });
       }else if(!(this.data.haveRecorded)&&this.data.haveGoneIntoCharInfo){
         Toast({
-          message: '还未“记录旅行手账”噢~',
+          message: '还未“记录追忆手账”噢~',
           forbidClick: true,
         });
       }else if(this.data.haveRecorded&&!(this.data.haveGoneIntoCharInfo)){
@@ -322,22 +352,12 @@ Page({
         animationEnd() {
           that.setData({
             haveRecorded:true,
-            // coreLongitude:tmpEndPlaceInfo.longitude,
-            // coreLatitude:tmpEndPlaceInfo.longitude,
           })
-          // console.log('animation end')
-          // mapCtx.moveToLocation({
-          //   latitude: tmpEndPlaceInfo.latitude,
-          //   longitude:  tmpEndPlaceInfo.longitude,
-          // });
           that.animate('.v', [
-            {opacity:0.5, scale: [1, 1], rotate: 0, ease: 'ease-out',  translate:[-200,-200]},
+            {opacity:0.5, scale: [1, 1], rotate: 0, ease: 'ease-out',  translate:[-100,-100]},
             {opacity:0.8, scale: [2, 2], rotate: 180, ease: 'ease-in', offset: 0.9},
-            {opacity:1, scale: [3, 3], rotate: 360 },
+            {opacity:1, scale: [3, 3], rotate: 180 },
             ], 4000, function () {
-              // this.clearAnimation('.v', { opacity: true, rotate: true }, function () {
-              //   console.log("清除了.v上的opacity和rotate属性")
-              // })
               wx.navigateTo({
                 url: `../association/index?content=${that.data.associationContent}`,
                 success: function(res){},

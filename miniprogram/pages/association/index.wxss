@@ -17,8 +17,9 @@ page {
 .t{
   writing-mode: vertical-rl;
   font-size: larger;
-  line-height:40px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:45px;
+  /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: Microsoft Yahei;
   opacity: 1;
 }
 .bt{
@@ -32,5 +33,11 @@ page {
   border:none;
   border-radius: 37.5rpx;
   box-shadow: 5rpx 5rpx 5rpx 5rpx gray;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: Microsoft Yahei;
+}
+
+.bottom_scroll{
+  position: relative;
+  writing-mode: vertical-rl;
 }

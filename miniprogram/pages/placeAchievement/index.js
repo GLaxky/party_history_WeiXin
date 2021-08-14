@@ -17,11 +17,11 @@ Page({
     coreLongitude:0,
     option1: [
       { text: '请选择地区', value: 0 },
-      { text: '上海', value: 1 },
-      { text: '武汉', value: 2 },
-      { text: '北京', value: 3 },
-      { text: '山东', value: 4 },
-      { text: '长沙', value: 5 },
+      { text: '上海地区', value: 1 },
+      { text: '武汉地区', value: 2 },
+      { text: '北京地区', value: 3 },
+      { text: '山东地区', value: 4 },
+      { text: '长沙地区', value: 5 },
     ],
     value1: 0,
     check:[]
@@ -31,7 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad:async function (options) {
-    const db = wx.cloud.database();
+    
     let types=[
       "ALL","上海","武汉","北京","山东","长沙",
     ];
@@ -96,6 +96,7 @@ Page({
     let tmp1=[];
     for(let j=1;j<types.length;j++){
       let tmp2=[]
+      const db = wx.cloud.database();
       await db.collection("place")
       .where({
         big_place:parseInt(j)

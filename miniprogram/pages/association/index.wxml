@@ -9,8 +9,10 @@ enable-progress-gesture="{{false}}"
 ></video>
 </block>
 <block wx:else> 
-  <text class="t" id="t1" style="position: relative; left: 241rpx; top: 156rpx; width: 479rpx; height: 1089rpx; display: block; box-sizing: border-box">
-  {{context}}
-</text>
+<scroll-view
+  class="bottom_scroll"  scroll-x="true" scroll-left="{{999}}" scroll-with-animation="{{true}}" style="position: relative; left: 205rpx; top: 145rpx; width: 394rpx; height: 1100rpx; display: block; box-sizing: border-box">
+  <text class="t" disabled='true'  style="width: 218rpx; height: 999rpx; display: inline-block; box-sizing: border-box; left: 17rpx; top: 42rpx; position: relative" 
+  decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{context}}</text>
+  </scroll-view>
 <button class="bt" style="position: absolute; left: 71rpx; top: 1225rpx" bindtap="goBack">返回探索地图</button>
  </block>

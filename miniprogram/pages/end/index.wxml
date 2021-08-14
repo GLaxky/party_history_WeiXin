@@ -1,2 +1,14 @@
 <!--miniprogram/pages/end/index.wxml-->
-<text>miniprogram/pages/end/index.wxml</text>
+<view class="tip">点击继续</view>
+<view class="v" bindtap="showText">
+  <text class="p" id="p1">恭喜！您已解锁所有人物！</text>
+  <text class="p" id="p2">感谢您使用本小程序</text>
+  <text class="p" id="p3">感谢您对那段悲壮历史的追寻与探索</text>
+  <text class="p" id="p4">  最后  </text>
+  <text class="p" id="p5">希望我们每一个中华儿女</text>
+  <text class="p" id="p6">铭记历史，铭记那些鲜血与牺牲</text>
+  <text class="p" id="p7">历史书上，我们轻轻带过的一笔，</text>
+  <text class="p" id="p8">却是他们曲折的一生。</text>
+  <text class="p" id="p9">那个黑暗年代，他们即使不知后事如何，</text>
+  <text class="p" id="p10">也义无反顾地奔向信仰的方向。</text>
+</view>

@@ -7,6 +7,7 @@ page {
   background-size:100% 100%;
   -moz-background-size:100% 100%;
   background-repeat: no-repeat;
+  font-family: Microsoft Yahei;
 }
 
 .button{
@@ -33,4 +34,9 @@ page {
   background-size: 400rpx 100rpx;
   background-repeat:no-repeat;
   border:none;
+}
+
+.special{
+  position: absolute;
+  writing-mode: vertical-lr;
 }

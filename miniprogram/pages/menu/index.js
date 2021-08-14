@@ -10,13 +10,28 @@ Page({
   data: {
     show1: false,
     show2: false,
+    checkFull: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let flag=false;
+    wx.cloud.callFunction({
+      name: 'checkFullAchievement',
+      data: {
+        openId: app.globalData.user_openId
+      },
+      success: res => {
+        console.log("checkFullAchievement"+res.result)
+        flag=res.result
+      }
+      })
 
+    this.setData({
+      checkFull:flag
+    })
   },
 
   /**
@@ -157,5 +172,14 @@ Page({
         })
       })
   },
+
+  goToEnd(){
+    wx.navigateTo({
+      url: '../end/index',
+      success: function(res){},
+      fail: function() {},
+      complete: function() {}
+    })
+  }
 
 })
