@@ -8,6 +8,7 @@ page {
   background-size:100% 100%;
   -moz-background-size:100% 100%;
   background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .code_box {

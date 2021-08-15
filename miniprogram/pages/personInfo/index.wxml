@@ -4,11 +4,11 @@
 <view wx:if="{{char_id}}" class="personInfo">
   <view class="person-info-title">{{record.cname}}</view>
   <image class="person-info-img" src="{{record.image_url}}"></image>
-  <button wx:if="{{place_id}}" class="button" bindtap="jumpToPersonPlace">人物相关地点</button>
+  <button wx:if="{{place_id}}" class="button" bindtap="jumpToPersonPlace">查看相关地点</button>
   <view class="person-info-content">
     <view class="real-content">
     <text>\n</text>
-    <view>人物基本介绍</view>
+    <view class="bold">人物基本介绍</view>
     <view>{{record.cname}}</view>
     <view>{{record.intro}}</view>
     <view>{{record.birth}}<text>-</text>{{record.death}}</view>
@@ -16,20 +16,13 @@
     <text>\n</text>
     </view>
   </view>
+  <image src="../../images/人物故事.png" class="before-person-story"></image>
   <view class="person-info-story">
   <view class="real-content">
-    <text>\n</text>
-    <text>\n</text>
-    <text>\n</text>
-    <text>\n</text>
     {{record.story}}
-    <text>\n</text>
-    <text>\n</text>
-    <text>\n</text>
-    <text>\n</text>
   </view>
   </view>
-  <view class="before-submit-comment"></view>
+  <image class="before-submit-comment" src="../../images/评论区.png"></image>
   <view class="submit-comment">
     <input bindinput="input_comment" class="input-comment" type="text" value="{{input_comment}}" placeholder="请输入你的评论"></input>
     <button class="submit-btn" bindtap="submit">提交</button>
@@ -37,7 +30,7 @@
   <view class="all-comment">
     <view class='comment'  wx:for="{{comment}}" wx:key="_id">
       <view class="real-content">
-        <view class="comment_detail_user_name">{{item.user_name}}</view>
+        <view class="comment_detail_user_name">{{item.user_name}} 说：</view>
         <view class="comment_detail_comment">{{item.comment}}</view>
       </view>
     </view>

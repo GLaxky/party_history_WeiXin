@@ -10,22 +10,16 @@
       <text>\n</text>
     </view>
   </view>
+  <image src="../../images/地点简介.png" class="place-images"></image>
   <view class="place-info-intro">
     <view class="real-content">
-      <text>\n</text>
-      <text>\n</text>
       {{record.descrip}}
-      <text>\n</text>
-      <text>\n</text>
     </view>
   </view>
+  <image src="../../images/地点故事.png" class="place-images"></image>
   <view class="place-info-story">
     <view class="real-content">
-      <text>\n</text>
-      <text>\n</text>
       {{record.story}}
-      <text>\n</text>
-      <text>\n</text>
     </view>
   </view>
 </view>

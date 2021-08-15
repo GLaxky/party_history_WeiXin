@@ -1,10 +1,8 @@
 /* components/personAchieveCard/personAchieveCard.wxss */
 
 personAchieveCard {
-	width: 250rpx;
-  padding: 15rpx;
-  background-color: white;
-	border-radius: 37.5rpx;
+	width: 300rpx;
+	/*border-radius: 37.5rpx;*/
   box-shadow: 5rpx 5rpx 5rpx 5rpx gray;
   justify-content: space-around;
   margin: 30rpx;
@@ -12,7 +10,9 @@ personAchieveCard {
 
 .card {
 	display: flex;
-	width: 200rpx;
+	width: 300rpx;
+  background-image: url(https://s3.bmp.ovh/imgs/2021/08/b3b4255431f933f7.png);
+  background-size: 100% 100%;
 }
 .name{
   position: relative;

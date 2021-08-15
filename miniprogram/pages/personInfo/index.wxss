@@ -4,10 +4,11 @@ page {
   padding-top: 54rpx;
   background-color: #f6f6f6;
   padding-bottom: 60rpx;
-  background:url("https://s3.bmp.ovh/imgs/2021/08/3c6ce1f55ae171cb.jpg");
+  background:url("https://box.nju.edu.cn/f/f72d392829ac47d5b1ae/?dl=1");
   background-size:100% 100%;
   -moz-background-size:100% 100%;
   background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .real-content{
@@ -23,6 +24,12 @@ page {
   background: url("https://box.nju.edu.cn/f/3a67353c8f6645ab957b/?dl=1");
   background-size:100% 100%;
   width: 100px;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.bold{
+  font-weight: bolder;
 }
 
 .person-info-content {
@@ -33,12 +40,18 @@ page {
   background-size:100% 100%;
 }
 
+.before-person-story{
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 40%;
+  height: 200rpx;
+  text-align: center;
+}
+
 .person-info-story {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
   text-align: center;
-  background: url("https://box.nju.edu.cn/f/f03004bde1e14d3f9f7b/?dl=1");
-  background-size:100% 100%;
 }
 
 .person-info-img {
@@ -51,10 +64,9 @@ page {
 }
 
 .before-submit-comment {
-  width: 100%;
-  height:80rpx;
-  background: url("https://box.nju.edu.cn/f/f2ed383eb09049909088/?dl=1");
-  background-size:100% 100%;
+  width: 50%;
+  height: 200rpx;
+  margin-left: 50%;
 }
 
 .submit-comment {
@@ -79,15 +91,14 @@ page {
   font-size: x-small;
   text-align: center;
   line-height: 50rpx;
-  background-color: greenyellow;
+  background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png);
+  background-size: 100% 50rpx;
 }
 
 .all-comment {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
   width: 100%;
-  background: url("https://box.nju.edu.cn/f/415e570cdc604981822a/?dl=1");
-  background-size: 100% 10000%;
 }
 
 .comment {

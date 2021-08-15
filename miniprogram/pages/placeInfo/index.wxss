@@ -4,10 +4,11 @@ page {
   padding-top: 54rpx;
   background-color: #f6f6f6;
   padding-bottom: 60rpx;
-  background:url("https://s3.bmp.ovh/imgs/2021/08/3c6ce1f55ae171cb.jpg");
+  background:url("https://box.nju.edu.cn/f/f72d392829ac47d5b1ae/?dl=1");
   background-size:100% 100%;
   -moz-background-size:100% 100%;
   background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .real-content{
@@ -17,12 +18,19 @@ page {
   margin-right: 45rpx;
 }
 
+.place-images{
+  width: 100%;
+  height: 100rpx;
+}
+
 .place-info-title {
   margin: 20rpx auto 0 auto;
   text-align: center;
   background: url("https://box.nju.edu.cn/f/3a67353c8f6645ab957b/?dl=1");
   background-size:100% 100%;
-  width: 100px;
+  width: 40%;
+  font-weight: bolder;
+  font-size: x-large;
 }
 
 .place-info-basic {
@@ -35,15 +43,11 @@ page {
 .place-info-intro {
   margin: 20rpx auto 0 auto;
   text-align: center;
-  background: url("https://box.nju.edu.cn/f/26afd7b3b29e48b38358/?dl=1");
-  background-size:100% 100%;
 }
 
 .place-info-story {
   margin: 20rpx auto 0 auto;
   text-align: center;
-  background: url("https://box.nju.edu.cn/f/8826c7d41d0f42829804/?dl=1");
-  background-size:100% 100%;
 }
 
 .place-info-img {
