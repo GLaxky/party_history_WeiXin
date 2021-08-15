@@ -18,15 +18,15 @@ page {
 }
 
 .title{
-  writing-mode: vertical-lr;
-  /* background-image: url(https://s3.bmp.ovh/imgs/2021/08/1a88bcb355a51906.png); */
-  width: 200rpx;
-  height: 800rpx;
+  writing-mode: vertical;
+  background-image: url(https://s3.bmp.ovh/imgs/2021/08/b7547fa3f7ead7cd.png);
+  width: 100rpx;
+  height: 1000rpx;
   padding:0 20rpx;
   position: absolute;
   margin: auto;
-  background-size: 200rpx 400rpx;
+  background-size: 100rpx 1300rpx;
   background-repeat:no-repeat;
   border:none;
-  font-size: 60rpx;
+  font-size: 50rpx;
 }

@@ -170,6 +170,15 @@ Page({
             console.log("点击第10下")
         }.bind(this))
         break;
+        case 10:
+        this.animate('#p11', [
+          {opacity:0.3},
+          {opacity:0.6},
+          {opacity:1},
+          ], 1000, function () {
+            console.log("点击第11下")
+        }.bind(this))
+        break;
       default:
         wx.redirectTo({
           url: '../menu/index',

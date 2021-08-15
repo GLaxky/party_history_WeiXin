@@ -39,4 +39,15 @@ page {
 .special{
   position: absolute;
   writing-mode: vertical-lr;
+  background-image: url(https://s3.bmp.ovh/imgs/2021/08/1485940638b5f5f0.png);
+  width: 100rpx;
+  height: 100rpx;
+  /* padding:0 20rpx; */
+  /* margin: 20rpx; */
+  background-size: 150rpx 230rpx;
+  background-repeat:no-repeat;
+  border:none;
+  font-size: larger;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
 }
