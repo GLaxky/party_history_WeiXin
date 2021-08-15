@@ -10,6 +10,13 @@ page {
   background-repeat: repeat;
 }
 
+.real-content{
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  margin-left: 45rpx;
+  margin-right: 45rpx;
+}
+
 .place-info-title {
   margin: 20rpx auto 0 auto;
   text-align: center;
