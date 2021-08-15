@@ -29,6 +29,20 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    
+  tap: function(event){
+    if(this.properties.char_id==-1){
+      wx.showToast({
+        title: '提示：请探索该人物后再试',
+        icon: 'none'
+      })
+      return
+    }
+    else{
+      wx.navigateTo({
+        url: '../../pages/personInfo/index?char_id='+this.properties.char_id
+      })
+    }
+  }
   }
 })
