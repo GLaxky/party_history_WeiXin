@@ -11,7 +11,8 @@ Page({
     record: '',
     comment: '',
     input_comment: '',
-    place_id: ''
+    place_id: '',
+    is_new_char: ''
   },
 
   /**
@@ -29,6 +30,26 @@ Page({
       })
       return
     }
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'isNewPerson',
+        char_id: this.data.char_id
+      }
+    }).then((resp) => {
+      this.setData({
+        is_new_char: resp.result.data
+      })
+      if(this.data.is_new_char){
+        wx.showToast({
+          title: '恭喜发现新人物',
+          icon: 'none'
+        })
+      }
+    })
     wx.cloud.callFunction({
       name: 'quickstartFunctions',
       config: {

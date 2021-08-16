@@ -11,6 +11,8 @@ const getCommentById = require('./getCommentById/index')
 const getPlacesByPerson = require('./getPlacesByPerson/index')
 const getAchieveByUid = require('./getAchieveByUid/index')
 const insertComment = require('./insertComment/index')
+const isNewPerson = require('./isNewPerson/index')
+const isNewPlace = require('./isNewPlace/index')
 
 
 // 云函数入口函数
@@ -42,5 +44,9 @@ exports.main = async (event, context) => {
       return await getAchieveByUid.main(event, context)
     case 'insertComment':
       return await insertComment.main(event, context)
+    case 'isNewPerson':
+      return await isNewPerson.main(event, context)
+    case 'isNewPlace':
+      return await isNewPlace.main(event, context)
   }
 }
