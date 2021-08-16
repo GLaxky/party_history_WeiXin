@@ -15,7 +15,10 @@ exports.main = async (event, context) => {
     }) 
     .get()
     .then(res=>{
-      return res.data[0].content
+      return{ 
+        contents:res.data[0].content,
+        aid:res.data[0].association_id
+      }
     })
     .catch(err => {
       console.error(err)

@@ -1,5 +1,5 @@
 <!--components/smallCharCard/smallCharCard.wxml-->
-<navigator url="/pages/map/map?end_char_id={{char_id}}&end_place_id={{p_id}}" bindtap="">
+<navigator url="/pages/map/map?end_char_id={{char_id}}&end_place_id={{p_id}}" bindtap="" open-type="redirect">
   <view class="card">
     <van-image 
     round

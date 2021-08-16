@@ -18,6 +18,7 @@ Page({
     associationContent:"",
     haveRecorded:false,
     haveGoneIntoCharInfo:false,
+    association_id:0
   },
 
   /**
@@ -80,14 +81,15 @@ Page({
         }
       });
       this.setData({
-        associationContent:content,
+        associationContent:content.contents,
         start_char_id:0,
         start_place_id:0,
         end_char_id:options.end_char_id,
         end_place_id:options.end_place_id,
         markers:tmp,
         coreLongitude:parseFloat(tmpPlaceInfo.longitude),
-        coreLatitude:parseFloat(tmpPlaceInfo.latitude)
+        coreLatitude:parseFloat(tmpPlaceInfo.latitude),
+        association_id:content.aid
       })
     }else{
       let tmp=[];
@@ -162,7 +164,7 @@ Page({
         }
       });
       this.setData({
-        associationContent:content,
+        associationContent:content.contents,
         start_char_id:options.start_char_id,
         start_place_id:options.start_place_id,
         end_char_id:options.end_char_id,
@@ -170,6 +172,7 @@ Page({
         markers:tmp,
         coreLongitude:parseFloat(tmpEndPlaceInfo.longitude),
         coreLatitude:parseFloat(tmpEndPlaceInfo.latitude),
+        association_id:content.aid
       })
 
     }
@@ -314,6 +317,7 @@ Page({
 
     goTocharInfo:function (e){
       // console.log(e)
+      console.log("this.data.association_id"+this.data.association_id)
       if(e.detail.markerId==0){
         wx.navigateTo({
           url:`/pages/personInfo/index?char_id=${this.data.start_char_id}&envId=cloud1-0gn7op1be7f4656e&place_id=${this.data.start_place_id}`
@@ -330,7 +334,7 @@ Page({
           haveGoneIntoCharInfo:true,
         })
         wx.navigateTo({
-          url:`/pages/personInfo/index?char_id=${this.data.end_char_id}&envId=cloud-environment-6e21xvc5d21990&place_id=${this.data.end_place_id}`
+          url:`/pages/personInfo/index?char_id=${this.data.end_char_id}&envId=cloud-environment-6e21xvc5d21990&place_id=${this.data.end_place_id}&association_id=${this.data.association_id}`
         })
       }
       
@@ -404,6 +408,7 @@ Page({
             end_place_id:parseInt(end_place_id),
           },
           success: res => {
+            console.log("getAssociationContent"+res.result)
             resolve(res.result)
           }
           })

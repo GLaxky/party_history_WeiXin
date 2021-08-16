@@ -20,6 +20,6 @@
   <view >
     <button class="container" bindtap="goToPersonAchievement">人物探索成就</button>
     <button class="container" bindtap="goToPlaceAchievement">地点探索成就</button>
-    <button class="container" bindtap="goToCharMap">成就探索总览</button>
+    <button class="container" bindtap="goToCharMap">成就解锁提示</button>
   </view>
 </van-popup>
