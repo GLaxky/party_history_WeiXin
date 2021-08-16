@@ -11,18 +11,13 @@ exports.main = async (event, context) => {
   // 返回数据库查询结果
   try {
     var personInfo = (await db.collection('character').get()).data;
-    var result = await db.collection('user_record').where({
-      uid: wxContext.OPENID
+    var result = await db.collection('user_persons').where({
+      user_id: wxContext.OPENID
     }).get();
     var achieveList = [];
     for (let index = 0; index < result.data.length; index++) {
       const element = result.data[index];
-      var temp = await db.collection('association').where({
-        association_id: parseInt(element.association_id)
-      }).get();
-      if (!achieveList.includes(temp.data[0].end_char_id)) {
-        achieveList.push(temp.data[0].end_char_id);
-      }
+      achieveList.push(element.char_id);
     }
     var count = personInfo.length;
     var notAchieveList = []

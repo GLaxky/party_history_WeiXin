@@ -7,7 +7,8 @@ Page({
   data: {
     envId: '',
     place_id: '',
-    record: ''
+    record: '',
+    is_new_place: ''
   },
 
   /**
@@ -17,6 +18,27 @@ Page({
     this.setData({
       envId: options.envId,
       place_id: options.place_id
+    })
+    
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'isNewPlace',
+        place_id: this.data.place_id
+      }
+    }).then((resp) => {
+      this.setData({
+        is_new_place: resp.result.data
+      })
+      if(this.data.is_new_place){
+        wx.showToast({
+          title: '恭喜发现新地点',
+          icon: 'none'
+        })
+      }
     })
   },
 

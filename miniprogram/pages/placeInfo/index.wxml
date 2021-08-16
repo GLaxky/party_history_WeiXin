@@ -10,13 +10,13 @@
       <text>\n</text>
     </view>
   </view>
-  <image src="../../images/地点简介.png" class="place-images"></image>
+  <image src="https://box.nju.edu.cn/f/0940da9caf294f8d9390/?dl=1" class="place-images"></image>
   <view class="place-info-intro">
     <view class="real-content">
       {{record.descrip}}
     </view>
   </view>
-  <image src="../../images/地点故事.png" class="place-images"></image>
+  <image src="https://box.nju.edu.cn/f/4b850c164aef494da88d/?dl=1" class="place-images"></image>
   <view class="place-info-story">
     <view class="real-content">
       {{record.story}}

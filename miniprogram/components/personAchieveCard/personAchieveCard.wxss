@@ -1,34 +1,42 @@
 /* components/personAchieveCard/personAchieveCard.wxss */
 
 personAchieveCard {
-	width: 300rpx;
+	width: 60%;
 	/*border-radius: 37.5rpx;*/
   box-shadow: 5rpx 5rpx 5rpx 5rpx gray;
   justify-content: space-around;
   margin: 30rpx;
+  margin-left: 20%;
 }
 
 .card {
 	display: flex;
-	width: 300rpx;
+	flex-direction: row;
+  height: 15%;
   background-image: url(https://s3.bmp.ovh/imgs/2021/08/b3b4255431f933f7.png);
   background-size: 100% 100%;
 }
+
 .name{
   position: relative;
   height: 50rpx;
 	font-size: 35rpx;
 	font-weight: normal;
-	text-align: center;
+  text-align: center;
+  margin-left: 50rpx;
+  padding-top: 50rpx;
 }
 
 .image {
-  width: 50rpx;
-  height: 50rpx;
+  width: 100rpx;
+  height: 130rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
 }
 
 .achieve_image{
-  width: 50rpx;
-  height: 50rpx;
-  right: 0rpx;
+  width: 100rpx;
+  height: 100rpx;
+  padding-top: 40rpx;
+  padding-left: 30rpx;
 }

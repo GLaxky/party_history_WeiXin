@@ -4,7 +4,7 @@
 <view wx:if="{{char_id}}" class="personInfo">
   <view class="person-info-title">{{record.cname}}</view>
   <image class="person-info-img" src="{{record.image_url}}"></image>
-  <button wx:if="{{place_id}}" class="button" bindtap="jumpToPersonPlace">查看相关地点</button>
+  <button wx:if="{{place_id}}" class="button" bindtap="jumpToPersonPlace">相关地点</button>
   <view class="person-info-content">
     <view class="real-content">
     <text>\n</text>
@@ -16,13 +16,13 @@
     <text>\n</text>
     </view>
   </view>
-  <image src="../../images/人物故事.png" class="before-person-story"></image>
+  <image src="https://box.nju.edu.cn/f/ccabdb67911b4c39a6e9/?dl=1" class="before-person-story"></image>
   <view class="person-info-story">
   <view class="real-content">
     {{record.story}}
   </view>
   </view>
-  <image class="before-submit-comment" src="../../images/评论区.png"></image>
+  <image class="before-submit-comment" src="https://box.nju.edu.cn/f/e2642ad913ee430d8c43/?dl=1"></image>
   <view class="submit-comment">
     <input bindinput="input_comment" class="input-comment" type="text" value="{{input_comment}}" placeholder="请输入你的评论"></input>
     <button class="submit-btn" bindtap="submit">提交</button>
