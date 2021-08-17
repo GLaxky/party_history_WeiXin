@@ -436,7 +436,7 @@ Page({
 
     goToChooseCoreChar(){
       wx.navigateTo({
-        url: '../menu/index',
+        url: '../chooseCoreChar/index',
         success: function(res){},
         fail: function() {},
         complete: function() {}
