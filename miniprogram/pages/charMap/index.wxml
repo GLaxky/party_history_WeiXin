@@ -4,7 +4,7 @@
   text="根据下图的人物关系图进行探索来解锁成就吧~~"
 />
 <image style="width: 743rpx; height: 1323rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx" 
-  src="https://s3.bmp.ovh/imgs/2021/08/0df488307230dc7b.png"
+  src="https://weixin-lxk.oss-cn-beijing.aliyuncs.com/图片/3.0.png?versionId=CAEQFBiBgICKsrfU2hciIDUxNDY2NTNkMDZmNzQ4ZTNhZDUxN2RlYTZjNzZkYjhk"
 />
 <van-toast id="van-toast" />
 
