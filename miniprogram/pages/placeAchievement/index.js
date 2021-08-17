@@ -78,7 +78,7 @@ Page({
           borderColor: '#000000',
           bgColor: '#fff',
           padding: 10,
-          display: 'ALWAYS',
+          display: 'BYCLICK',
           textAlign: 'center',
           anchorX:0,
           anchorY:0
