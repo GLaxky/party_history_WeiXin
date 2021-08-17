@@ -10,7 +10,7 @@ Page({
   data: {
     show1: false,
     show2: false,
-    checkFull: false,
+    checkFull: true,
   },
 
   /**
@@ -18,6 +18,7 @@ Page({
    */
   onLoad: function (options) {
     let flag=false;
+    let that =this;
     wx.cloud.callFunction({
       name: 'checkFullAchievement',
       data: {
@@ -26,12 +27,13 @@ Page({
       success: res => {
         console.log("checkFullAchievement"+res.result)
         flag=res.result
+        that.setData({
+          checkFull:flag
+        })
       }
       })
 
-    this.setData({
-      checkFull:flag
-    })
+    
   },
 
   /**
