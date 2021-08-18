@@ -17,7 +17,7 @@
     <view>{{record.cname}}</view>
     <view>{{record.intro}}</view>
     <view>{{record.birth}}<text>-</text>{{record.death}}</view>
-    <view class="masterpieces">{{record.masterpieces}}</view>
+    <view class="masterpieces">代表作品：{{record.masterpieces}}</view>
     <text>\n</text><text>\n</text>
     </view>
   </view>
