@@ -1,10 +1,15 @@
 <!--miniprogram/pages/personInfo/index.wxml-->
 <view wx:if="{{!char_id}}">请探索该人物后再试</view>
-
+<button wx:if="{{place_id}}" class="jump"  bindtap="jumpToPersonPlace" >
+    <image wx:if="{{place_id}}"
+      src="../../images/相关地点 (2).png"
+      class="icon"
+    />
+    <text class="btn_text">相关地点</text>
+</button>
 <view wx:if="{{char_id}}" class="personInfo">
   <view class="person-info-title">{{record.cname}}</view>
   <image class="person-info-img" src="{{record.image_url}}"></image>
-  <button wx:if="{{place_id}}" class="button" bindtap="jumpToPersonPlace">相关地点</button>
   <view class="person-info-content">
     <view class="real-content">
     <text>\n</text>
