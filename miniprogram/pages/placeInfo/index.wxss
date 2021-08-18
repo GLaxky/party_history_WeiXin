@@ -42,12 +42,14 @@ page {
 
 .place-info-intro {
   margin: 20rpx auto 0 auto;
-  text-align: center;
+  text-align: justify;
+  line-height: 55rpx;
 }
 
 .place-info-story {
   margin: 20rpx auto 0 auto;
-  text-align: center;
+  text-align: justify;
+  line-height: 55rpx;
 }
 
 .place-info-img {

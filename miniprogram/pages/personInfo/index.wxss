@@ -40,6 +40,11 @@ page {
   background-size:100% 100%;
 }
 
+.masterpieces{
+  text-align: justify;
+  line-height: 55rpx;
+}
+
 .before-person-story{
   margin-left: 30%;
   margin-right: 30%;
@@ -51,7 +56,8 @@ page {
 .person-info-story {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
-  text-align: center;
+  text-align: justify;
+  line-height: 55rpx;
 }
 
 .person-info-img {
@@ -118,7 +124,7 @@ page {
 .jump {
   width: 160rpx;
   height: 160rpx;
-  position: fixed;
+  position: absolute;
   margin-top: 10rpx;
   margin-right: 20rpx;
   margin-left: 75%;

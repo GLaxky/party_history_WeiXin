@@ -19,7 +19,9 @@
   <image src="https://box.nju.edu.cn/f/4b850c164aef494da88d/?dl=1" class="place-images"></image>
   <view class="place-info-story">
     <view class="real-content">
+      <text>\n</text><text>\n</text>
       {{record.story}}
+      <text>\n</text><text>\n</text>
     </view>
   </view>
 </view>

@@ -12,13 +12,13 @@
   <image class="person-info-img" src="{{record.image_url}}"></image>
   <view class="person-info-content">
     <view class="real-content">
-    <text>\n</text>
+    <text>\n</text><text>\n</text>
     <view class="bold">人物基本介绍</view>
     <view>{{record.cname}}</view>
     <view>{{record.intro}}</view>
     <view>{{record.birth}}<text>-</text>{{record.death}}</view>
-    <view>{{record.masterpieces}}</view>
-    <text>\n</text>
+    <view class="masterpieces">{{record.masterpieces}}</view>
+    <text>\n</text><text>\n</text>
     </view>
   </view>
   <image src="https://box.nju.edu.cn/f/ccabdb67911b4c39a6e9/?dl=1" class="before-person-story"></image>
