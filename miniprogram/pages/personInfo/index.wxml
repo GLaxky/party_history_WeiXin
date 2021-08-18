@@ -2,7 +2,7 @@
 <view wx:if="{{!char_id}}">请探索该人物后再试</view>
 <button wx:if="{{place_id}}" class="jump"  bindtap="jumpToPersonPlace" >
     <image wx:if="{{place_id}}"
-      src="../../images/相关地点 (2).png"
+      src="https://box.nju.edu.cn/f/0adfa749a2a04a108496/?dl=1"
       class="icon"
     />
     <text class="btn_text">相关地点</text>
