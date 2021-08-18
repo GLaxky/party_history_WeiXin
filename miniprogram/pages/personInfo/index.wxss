@@ -126,10 +126,11 @@ page {
   align-items: center;
   text-align: center;
   box-sizing: border-box;
+  background-color: white;
 }
 .icon{
   position: relative;
-  margin-top: 10rpx;
+  margin-top: 5rpx;
   margin-left: 10rpx;
   width: 90rpx;
   height: 90rpx;
