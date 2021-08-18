@@ -320,7 +320,7 @@ Page({
       console.log("this.data.association_id"+this.data.association_id)
       if(e.detail.markerId==0){
         wx.navigateTo({
-          url:`/pages/personInfo/index?char_id=${this.data.start_char_id}&envId=cloud1-0gn7op1be7f4656e&place_id=${this.data.start_place_id}`
+          url:`/pages/personInfo/index?char_id=${this.data.start_char_id}&envId=cloud-environment-6e21xvc5d21990&place_id=${this.data.start_place_id}`
         })
       }else if (e.detail.markerId==1){
         if(!this.data.haveRecorded){

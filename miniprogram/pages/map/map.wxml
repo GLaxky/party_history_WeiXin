@@ -28,7 +28,7 @@
     />
   <text class="btText" style="">记录手账</text>
   </button>
-  <button class="button" bindtap="showPopup" style="" hover-class="plain-hover"><image style="position: relative;width: 90rpx; height: 90rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  
+  <button class="button" bindtap="showPopup" style="" hover-class="plain-hover"><image style="width: 90rpx; height: 90rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  
     src="https://s3.bmp.ovh/imgs/2021/08/29dadfe951cff9bf.png"
     class="imag"
     />

@@ -69,20 +69,20 @@ Page({
         longitude:points[i].longitude,
         width: 35,
         height: 45,
-        callout: {
-          content: types[i],
-          color: '#ff0000',
-          fontSize: 14,
-          borderWidth: 2,
-          borderRadius: 10,
-          borderColor: '#000000',
-          bgColor: '#fff',
-          padding: 10,
-          display: 'BYCLICK',
-          textAlign: 'center',
-          anchorX:0,
-          anchorY:0
-        }
+        // callout: {
+        //   content: types[i],
+        //   color: '#ff0000',
+        //   fontSize: 14,
+        //   borderWidth: 2,
+        //   borderRadius: 10,
+        //   borderColor: '#000000',
+        //   bgColor: '#fff',
+        //   padding: 10,
+        //   display: 'BYCLICK',
+        //   textAlign: 'center',
+        //   anchorX:0,
+        //   anchorY:0
+        // }
       })
     }
     this.setData({

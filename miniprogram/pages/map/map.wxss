@@ -81,7 +81,7 @@ width: 90rpx;
 
  .title{
   background-image: url(https://s3.bmp.ovh/imgs/2021/08/0bb4d67a4810a2ea.png);
-  width: 550rpx;
+  width: 570rpx;
   height: 80rpx;
   padding:0 20rpx;
   position: relative;
@@ -89,29 +89,29 @@ width: 90rpx;
   top: 20rpx;
   /* bottom: 0; */
   margin: 10rpx;
-  background-size: 550rpx 80rpx;
+  background-size: 570rpx 80rpx;
   background-repeat:no-repeat;
   border:none;
-
+  /* margin: 30rpx; */
  }
 
  .text_title{
   font-size: larger;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* margin: 15rpx; */
-  padding: 15rpx;
+  margin: 15rpx;
+  /* padding: 15rpx; */
  }
 
  .back_button{
   background-image: url(https://s3.bmp.ovh/imgs/2021/08/7dd5ec675fa6966f.png);
   width: 450rpx;
   height: 100rpx;
-  padding:0 20rpx;
+  /* padding:0 20rpx; */
   position: absolute;
-  left: 50rpx;
+  left: 10rpx;
   top: 120rpx;
   /* bottom: 0; */
-  margin: auto;
+  margin: 50rpx;
   background-size: 450rpx 100rpx;
   background-repeat:no-repeat;
   border:none;
