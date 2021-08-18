@@ -2,7 +2,15 @@
 <navigator bindtap="tap">
   <view class="card">
     <image class="image" src="{{imageUrl}}"/>
-    <view class="name"  >{{name}}</view>
+    <view class="name"
+    wx:if="{{char_id==2||char_id==24}}"
+    style=" text-indent:0.5em">
+    {{name}}
+    </view>
+    <view class="name"
+    wx:if="{{char_id!=2&&char_id!=24}}">
+    {{name}}
+    </view>
     <image class="achieve_image" wx:if="{{char_id!=-1}}" src="https://box.nju.edu.cn/f/e7f71a6a59244fbfa117/?dl=1"></image>
     <image class="achieve_image" wx:if="{{char_id==-1}}" src="https://box.nju.edu.cn/f/6fd797f5f3244a98b498/?dl=1"></image>
   </view>
