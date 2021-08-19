@@ -48,9 +48,9 @@ page {
 .before-person-story{
   margin-left: 30%;
   margin-right: 30%;
-  width: 40%;
-  height: 200rpx;
-  text-align: center;
+  max-width: 300rpx;
+  max-height: 180rpx;
+  align-items: center;
 }
 
 .person-info-story {
@@ -70,9 +70,10 @@ page {
 }
 
 .before-submit-comment {
-  width: 50%;
-  height: 200rpx;
-  margin-left: 50%;
+  max-width: 280rpx;
+  max-height: 210rpx;
+  align-items: center;
+  margin-left: 60%;
 }
 
 .submit-comment {

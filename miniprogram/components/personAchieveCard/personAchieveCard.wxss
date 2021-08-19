@@ -15,6 +15,7 @@ personAchieveCard {
   height: 15%;
   background-image: url(https://s3.bmp.ovh/imgs/2021/08/b3b4255431f933f7.png);
   background-size: 100% 100%;
+  align-items: center;
 }
 
 .name{
@@ -24,14 +25,12 @@ personAchieveCard {
 	font-weight: normal;
   text-align: center;
   margin-left: 50rpx;
-  padding-top: 50rpx;
 }
 
 .image {
-  width: 100rpx;
-  height: 130rpx;
-  margin-left: 20rpx;
-  margin-top: 10rpx;
+  width: 80rpx;
+  height: 100rpx;
+  margin-left: 40rpx;
 }
 
 .achieve_image{
