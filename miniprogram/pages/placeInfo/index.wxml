@@ -1,6 +1,6 @@
 <!--miniprogram/pages/placeInfo/index.wxml-->
 <view class="placeInfo">
-  <view class="place-info-title">{{record.place_name}}</view>
+  <view class="place-info-title"><text class="content-title">{{record.place_name}}</text></view>
   <image class="place-info-img" src="{{record.image_url}}"></image>
   <view class='place-info-basic'>
     <view class="real-content">
@@ -19,9 +19,7 @@
   <image src="https://box.nju.edu.cn/f/4b850c164aef494da88d/?dl=1" class="place-images"></image>
   <view class="place-info-story">
     <view class="real-content">
-      <text>\n</text><text>\n</text>
       {{record.story}}
-      <text>\n</text><text>\n</text>
     </view>
   </view>
 </view>

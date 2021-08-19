@@ -29,6 +29,12 @@ page {
   background: url("https://box.nju.edu.cn/f/3a67353c8f6645ab957b/?dl=1");
   background-size:100% 100%;
   width: 40%;
+}
+
+.content-title{
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  width: 75%;
   font-weight: bolder;
   font-size: x-large;
 }
