@@ -35,7 +35,7 @@ exports.main = async (event, context) => {
       for (let i = 0; i < personInfo.length; i++) {
         if (personInfo[i].char_id == element) {
           personInfo[i].char_id = -1;
-          personInfo[i].image_url = "../../images/wenhao.jpg";
+          personInfo[i].image_url = "https://box.nju.edu.cn/f/4b0b8fa9cc4348498555/?dl=1";
           personInfo[i].cname = "???";
         }
       }
