@@ -49,8 +49,8 @@ Page({
         longitude:114.305177
       },
       {
-        latitude:39.998877,
-        longitude:116.316833
+        latitude:39.926564,
+        longitude:116.40125
       },
       {
         latitude:36.65633,
@@ -238,6 +238,7 @@ Page({
     }
     for(let i=0;i<this.data.smallPlace.length;i++){
       if(this.data.smallPlace[i].index==e.detail){
+        console.log(this.data.smallPlace[i].data)
         this.setData({
           markers:this.data.smallPlace[i].data,
         })
