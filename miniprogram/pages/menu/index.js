@@ -10,7 +10,7 @@ Page({
   data: {
     show1: false,
     show2: false,
-    checkFull: true,
+    checkFull: false,
   },
 
   /**
